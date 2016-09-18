@@ -25,7 +25,7 @@ gulp.task('tsc', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('copy', function () {
+gulp.task('html', function () {
     gulp.src(html)
         .pipe(gulp.dest(dist))
         .pipe(connect.reload());
@@ -38,7 +38,7 @@ gulp.task('sass', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('build', ['tsc', 'copy', 'sass']);
+gulp.task('build', ['tsc', 'html', 'sass']);
 
 gulp.task('serve', function () {
     //var server = gls.static(root, port);
@@ -60,6 +60,6 @@ gulp.task('serve', function () {
 
 gulp.task('dev', ['build', 'serve', 'sass'], function () {
     gulp.watch(ts, ['tsc']);
-    gulp.watch(html, ['copy']);
+    gulp.watch(html, ['html']);
     gulp.watch(scss, ['sass']);
 });
