@@ -18,12 +18,11 @@
     <script src="systemjs.config.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-full navbar-fixed-top navbar-light bg-faded">
-  <a class="navbar-brand" [routerLink]="['']">Angular 2 Demo</a>
-</nav>
 
 <app>
-    Loading ...
+    <div class="loading-indicator">
+        <i class="fa fa-circle-o-notch fa-spin"></i> Loading ...
+    </div>
 </app>
 
 <script>
