@@ -1,0 +1,14 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "no-constructor-vars": true,
+    "quotemark": [true, "single"],
+    "member-access": [false, "check-accessor"],
+    "eofline": true,
+    "no-trailing-whitespace": true,
+    "no-forward-ref": false,
+    "curly": true
+  },
+  "rulesDirectory": [
+  ]
+}
