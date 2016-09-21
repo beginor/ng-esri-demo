@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "typings install",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "start": "webpack-dev-server --inline --progress --port 8080"
+    "start": "webpack-dev-server --inline --progress --port 3000"
   },
   "repository": {
     "type": "git",
@@ -46,9 +46,11 @@
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
+    "node-sass": "^3.10.0",
     "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",
     "typescript": "^2.0.2",
