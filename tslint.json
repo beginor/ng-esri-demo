@@ -6,8 +6,9 @@
     "member-access": [false, "check-accessor"],
     "eofline": true,
     "no-trailing-whitespace": true,
-    "no-forward-ref": false,
-    "curly": true
+    /*"no-forward-ref": false,*/
+    "curly": true,
+    "no-unused-expression": true
   },
   "rulesDirectory": [
   ]
