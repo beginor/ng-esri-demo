@@ -4,7 +4,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 
-//import './main.scss';
+require('./main.scss');
 
 if (process.env.ENV === 'production') {
   enableProdMode();
