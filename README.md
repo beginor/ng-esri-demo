@@ -34,5 +34,5 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
   4. Happy coding!.
 
 PS: the `master` branch is build with [web-pack](http://webpack.github.io),
-if you prefer to use with `System.JS` loader, please check out the `[gulp](https://github.com/beginor/angular-seed/tree/gulp)`
-branch.
+if you prefer to use with `System.JS` loader, please check out the
+[gulp](https://github.com/beginor/angular-seed/tree/gulp) branch.
