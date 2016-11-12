@@ -12,7 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/beginor/angular-seed.git"
   },
-  "keywords": ["angular2", "seed", "gulp", "systemjs"],
+  "keywords": [
+    "angular2",
+    "seed",
+    "gulp",
+    "systemjs"
+  ],
   "author": "beginor",
   "license": "MIT",
   "bugs": {
@@ -39,6 +44,8 @@
   "devDependencies": {
     "@angular/compiler-cli": "~2.1.2",
     "@angular/platform-server": "~2.1.2",
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.46",
     "angular2-template-loader": "^0.5.0",
     "awesome-typescript-loader": "^2.2.4",
     "css-loader": "^0.25.0",
@@ -54,7 +61,6 @@
     "style-loader": "^0.13.1",
     "ts-loader": "^0.9.4",
     "typescript": "^2.0.3",
-    "typings": "^1.4.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^0.15.0"
