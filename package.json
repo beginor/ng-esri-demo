@@ -4,7 +4,6 @@
   "description": "angular 2 seed app",
   "main": "src/index.html",
   "scripts": {
-    "postinstall": "typings install",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "start": "webpack-dev-server --inline --hot --progress --port 3000 --host 0.0.0.0"
   },
