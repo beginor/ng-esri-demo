@@ -11,7 +11,7 @@ let root = './',
     ts = root + 'src/**/*.ts',
     scss = root + 'src/**/*.scss',
     html = root + 'src/**/*.html',
-    dist = root + 'dist',
+    dist = root + 'src',
     port = 3000;
 
 gulp.task('tsc', function () {
