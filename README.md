@@ -9,7 +9,7 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
   - ng-bootstrap
   - font awesome
   - scss
-  - webpack
+  - gulp
 
 ## Usage
 
@@ -33,6 +33,6 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
 
   4. Happy coding!.
 
-PS: the `master` branch is build with [web-pack](http://webpack.github.io),
-if you prefer to use with `System.JS` loader, please check out the
-[gulp](https://github.com/beginor/angular-seed/tree/gulp) branch.
+PS: the `master` branch is use `System.JS` loader,
+if you prefer to build with [webpack](http://webpack.github.io), please check out the
+[webpack](https://github.com/beginor/angular-seed/tree/webpack) branch.
