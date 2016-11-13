@@ -7,7 +7,8 @@
     "prebuild": "npm run clean",
     "build": "gulp build",
     "start": "gulp dev",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "ngc": "ngc"
   },
   "repository": {
     "type": "git",
@@ -54,6 +55,6 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-typescript": "^3.1.2",
     "http-proxy-middleware": "0.17.2",
-    "typescript": "^2.1.1"
+    "typescript": "^2.0.9"
   }
 }

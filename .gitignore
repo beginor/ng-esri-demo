@@ -4,3 +4,9 @@ dist
 node_modules
 bower_components
 typings
+src/**/*.css
+src/**/*.js
+src/**/*.js.map
+src/**/*.metadata.json
+src/**/*.ngfactory.ts
+src/**/*.css.shim.ts
