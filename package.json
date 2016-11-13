@@ -2,10 +2,12 @@
   "name": "angular-seed",
   "version": "1.0.0",
   "description": "angular 2 seed app",
-  "main": "src/index.html",
+  "main": "index.html",
   "scripts": {
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "start": "webpack-dev-server --inline --hot --progress --port 3000 --host 0.0.0.0"
+    "prebuild": "npm run clean",
+    "build": "gulp build",
+    "start": "gulp dev",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
@@ -32,10 +34,11 @@
     "@angular/platform-browser": "~2.1.2",
     "@angular/platform-browser-dynamic": "~2.1.2",
     "@angular/router": "~3.1.2",
-    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.8",
+    "@ng-bootstrap/ng-bootstrap": "~1.0.0-alpha.13",
     "core-js": "^2.4.1",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.39",
     "zone.js": "^0.6.25",
     "bootstrap": "4.0.0-alpha.4",
     "font-awesome": "^4.6.3"
@@ -45,7 +48,12 @@
     "@angular/platform-server": "~2.1.2",
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.46",
-    "rimraf": "^2.5.2",
-    "typescript": "^2.0.3"
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-typescript": "^3.1.2",
+    "http-proxy-middleware": "0.17.2",
+    "typescript": "^2.1.1"
   }
 }
