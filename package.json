@@ -53,7 +53,6 @@
     "@angular/platform-server": "~2.1.2",
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.46",
-    "browserify": "^13.1.1",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^2.3.2",
