@@ -11,7 +11,8 @@
     "suppressImplicitAnyIndexErrors": false
   },
   "exclude": [
+    ".idea",
     "node_modules",
-    ".idea"
+    "src/main-aot.ts"
   ]
 }

@@ -11,10 +11,9 @@
     "suppressImplicitAnyIndexErrors": false
   },
   "exclude": [
-    ".idea"
-  ],
-  "files": [
-    "src/main-aot.ts"
+    ".idea",
+    "node_modules",
+    "src/main.ts"
   ],
   "angularCompilerOptions": {
     "skipMetadataEmit" : true
