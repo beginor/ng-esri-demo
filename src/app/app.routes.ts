@@ -6,4 +6,4 @@ const routes: Routes = [
     { path: '', component: HomeComponent }
 ];
 
-export const AppRoutes = RouterModule.forRoot(routes, { useHash: false, enableTracing: false });
+export const AppRoutes = RouterModule.forRoot(routes, { useHash: true, enableTracing: false });

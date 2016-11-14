@@ -7,8 +7,12 @@
     "prebuild": "npm run clean",
     "build": "gulp build",
     "start": "gulp dev",
+    "serve": "gulp serve",
     "clean": "rm -rf dist",
-    "ngc": "ngc"
+    "ngc": "ngc -p tsconfig-aot.json",
+    "tsc": "tsc -p tsconfig-aot.json",
+    "rollup": "rollup -c rollup.config.js",
+    "aot": "npm run ngc && npm run tsc && npm run rollup"
   },
   "repository": {
     "type": "git",
@@ -49,12 +53,18 @@
     "@angular/platform-server": "~2.1.2",
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.46",
+    "browserify": "^13.1.1",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-typescript": "^3.1.2",
     "http-proxy-middleware": "0.17.2",
+    "rollup": "^0.36.3",
+    "rollup-plugin-alias": "^1.2.0",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "typescript": "^2.0.9"
   }
 }
