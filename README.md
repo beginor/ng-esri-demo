@@ -10,6 +10,7 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
   - font awesome
   - scss
   - gulp
+  - tree shaking
 
 ## Usage
 
@@ -31,8 +32,14 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
      npm start
      ```
 
-  4. Happy coding!.
+  4. Create an aot build
 
-PS: the `master` branch is use `System.JS` loader,
+     ```shell
+     npm run build-aot
+     ```
+
+  5. Happy coding!.
+
+PS: the `master` branch use `rollup` to do aot build and tree shaking,
 if you prefer to build with [webpack](http://webpack.github.io), please check out the
 [webpack](https://github.com/beginor/angular-seed/tree/webpack) branch.
