@@ -2,47 +2,27 @@
 
 let gulp = require('gulp'),
     proxy = require('http-proxy-middleware'),
-    connect = require('gulp-connect'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    tsc = require('gulp-typescript');
+    connect = require('gulp-connect');
 
 let root = './',
-    ts = root + 'src/**/*.ts',
-    scss = root + 'src/**/*.scss',
+    js = root + 'src/**/*.js',
+    css = root + 'src/**/*.css',
     html = root + 'src/**/*.html',
-    dist = root + 'src',
     port = 3000;
 
-gulp.task('tsc', function () {
-    var proj = tsc.createProject('tsconfig.json');
-    gulp.src(ts)
-        .pipe(sourcemaps.init())
-        .pipe(proj())
-        .js
-        .pipe(sourcemaps.write(root))
-        .pipe(gulp.dest(dist))
-        .pipe(connect.reload());
+gulp.task('js', function () {
+    gulp.src(js).pipe(connect.reload());
 });
 
 gulp.task('html', function () {
-    gulp.src(html)
-        .pipe(gulp.dest(dist))
-        .pipe(connect.reload());
+    gulp.src(html).pipe(connect.reload());
 });
 
-gulp.task('sass', function () {
-    gulp.src(scss)
-        .pipe(sass())
-        .pipe(gulp.dest(dist))
-        .pipe(connect.reload());
+gulp.task('css', function () {
+    gulp.src(css).pipe(connect.reload());
 });
-
-gulp.task('build', ['tsc', 'html', 'sass']);
 
 gulp.task('serve', function () {
-    //var server = gls.static(root, port);
-    //server.start();
     connect.server({
         name: 'Connect Dev Server',
         root: root,
@@ -61,8 +41,8 @@ gulp.task('serve', function () {
     });
 });
 
-gulp.task('dev', ['build', 'serve', 'sass'], function () {
-    gulp.watch(ts, ['tsc']);
+gulp.task('dev', ['serve'], function () {
+    gulp.watch(js, ['js']);
     gulp.watch(html, ['html']);
-    gulp.watch(scss, ['sass']);
+    gulp.watch(css, ['css']);
 });
