@@ -35,28 +35,29 @@
   },
   "homepage": "https://github.com/beginor/angular-seed#readme",
   "dependencies": {
-    "@angular/common": "~2.1.2",
-    "@angular/compiler": "~2.1.2",
-    "@angular/core": "~2.1.2",
-    "@angular/forms": "~2.1.2",
-    "@angular/http": "~2.1.2",
-    "@angular/platform-browser": "~2.1.2",
-    "@angular/platform-browser-dynamic": "~2.1.2",
-    "@angular/router": "~3.1.2",
+    "@angular/common": "~2.2.0",
+    "@angular/compiler": "~2.2.0",
+    "@angular/core": "~2.2.0",
+    "@angular/forms": "~2.2.0",
+    "@angular/http": "~2.2.0",
+    "@angular/platform-browser": "~2.2.0",
+    "@angular/platform-browser-dynamic": "~2.2.0",
+    "@angular/router": "~3.2.0",
+    "@angular/upgrade": "^2.2.0",
     "@ng-bootstrap/ng-bootstrap": "~1.0.0-alpha.13",
+    "bootstrap": "4.0.0-alpha.4",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.6.3",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.39",
-    "zone.js": "^0.6.25",
-    "bootstrap": "4.0.0-alpha.4",
-    "font-awesome": "^4.6.3"
+    "zone.js": "^0.6.25"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "~2.1.2",
-    "@angular/platform-server": "~2.1.2",
+    "@angular/compiler-cli": "~2.2.0",
+    "@angular/platform-server": "~2.2.0",
     "@types/core-js": "^0.9.34",
-    "@types/node": "^6.0.46",
+    "@types/node": "^6.0.48",
     "concurrently": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
@@ -67,6 +68,6 @@
     "rollup-plugin-commonjs": "^5.0.5",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1",
-    "typescript": "^2.0.9"
+    "typescript": "^2.0.10"
   }
 }
