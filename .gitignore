@@ -8,6 +8,7 @@ src/**/*.css
 src/**/*.js
 src/**/*.js.map
 src/**/*.metadata.json
+src/**/*.ngsummary.json
 src/**/*.ngfactory.ts
 src/**/*.css.shim.ts
 src/**/*.css.map
