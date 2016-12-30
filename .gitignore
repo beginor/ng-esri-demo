@@ -12,3 +12,4 @@ src/**/*.ngsummary.json
 src/**/*.ngfactory.ts
 src/**/*.css.shim.ts
 src/**/*.css.map
+src/**/*.ngstyle.ts
