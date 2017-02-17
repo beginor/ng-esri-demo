@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import Map = require('esri/Map');
+import MapView = require('esri/views/MapView');
+
 @Component({
     moduleId: module.id,
     selector: 'home',
@@ -13,6 +16,7 @@ export class HomeComponent {
 
     onClick() {
         this.message = `You have clicked ${++this.count} times!`;
+        let map = new Map({});
     }
 
 }

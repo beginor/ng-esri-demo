@@ -1,4 +1,4 @@
-# Angular Seed App
+# Angular ArcGIS JSAPI 4.x App 
 
 Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https://ng-bootstrap.github.io/)
 

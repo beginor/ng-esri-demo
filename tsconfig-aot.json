@@ -13,6 +13,7 @@
   "exclude": [
     ".idea",
     "node_modules",
+    "bower_components",
     "src/main.ts"
   ],
   "angularCompilerOptions": {

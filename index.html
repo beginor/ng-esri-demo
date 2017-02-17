@@ -16,6 +16,9 @@
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="systemjs.config.js"></script>
+    <script src="dojoConfig.js"></script>
+    <script src="bower_components/dojo/dojo.js"></script>
+    <script src="node_modules/esri-system-js/dist/esriSystem.js"></script>
 </head>
 <body>
 
@@ -26,9 +29,14 @@
 </app>
 
 <script>
-    System.import('app')
+    debugger;
+    esriSystem.register([
+        'esri/Map'
+    ], function () {
+        System.import('app')
           .then(function () { console.info('app imported!'); })
           .catch(function (err) { console.error(err); });
+    });
 </script>
 </body>
 </html>
