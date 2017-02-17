@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 
 import Map = require('esri/Map');
 import MapView = require('esri/views/MapView');
@@ -9,14 +9,24 @@ import MapView = require('esri/views/MapView');
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
 
-    message: string = 'Hello, Angular 2 !';
-    count: number = 0;
+    @ViewChild('mapElement') private mapElement: ElementRef;
+    
+    private mapView: MapView;
 
-    onClick() {
-        this.message = `You have clicked ${++this.count} times!`;
-        let map = new Map({});
+    constructor() {
+    }
+
+    ngAfterViewInit() {
+        debugger;
+        let map = new Map({
+            basemap: 'streets'
+        });
+        this.mapView = new MapView({
+            container: this.mapElement.nativeElement,
+            map: map
+        })
     }
 
 }
