@@ -19,7 +19,6 @@ export class HomeComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-        debugger;
         let map = new Map({
             basemap: 'streets'
         });

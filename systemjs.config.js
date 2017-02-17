@@ -24,16 +24,14 @@
       // rxjs 
       'rxjs': 'npm:rxjs',
       // ng-bootstrap
-      '@ng-bootstrap/ng-bootstrap': 'npm:@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
-      // dojo loader
-      'dojoLoader': 'systemjs.plugin.dojo.js'
+      '@ng-bootstrap/ng-bootstrap': 'npm:@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'
     },
     packages: {
       'rxjs': { defaultExtension: 'js' },
       'app': { main: 'main.js', defaultExtension: 'js', format: 'cjs' }
     },
     meta: {
-      'esri/*': { loader: 'dojoLoader' }
+      'esri/*': { loader: 'systemjs.loader.dojo.js' }
     }
   });
 })(this);
