@@ -1,29 +1,34 @@
-// loader for esri arcgis js api
-
 exports.fetch = function(load) {
-    var module = load.name.split('!')[0];
+    var name = load.name;
     return new Promise(function(resolve) {
-        var dojoModule = convertToDojoModule(module);
-        // make sure window.require is dojo/require
-        window.require([dojoModule], function(mod) {
-            resolve('code is by dojo loader.');
+        var dojoName = convertToDojoModule(name);
+        window.require([dojoName], function(mod) {
+            SystemJS.register(dojoName, [], function (exp, idObj) {
+                return {
+                    setters: [],
+                    execute: function() {
+                        exp("default", mod);
+                    }
+                };
+            });
+            resolve('');
         });
     });
 };
 
 exports.instantiate = function (load) {
-    var module = load.name.split('!')[0];
-    var dojoModule = convertToDojoModule(module);
+    var name = load.name.split('!')[0];
+    var dojoName = convertToDojoModule(name);
     return new Promise(function (resolve) {
         // Since module is loaded by fetch, just require it again,
         // dojo require does not load the module again.
-        window.require([dojoModule], function (mod) {
-            resolve(mod);
+        window.require([dojoName], function (module) {
+            resolve(module);
         });
     });
 };
 
 function convertToDojoModule(module) {
-    // we just replace System.baseURL with '';
-    return module.replace(System.baseURL, '');
+    // we just replace SystemJS.baseURL with '';
+    return module.replace(SystemJS.baseURL, '');
 }

@@ -10,11 +10,13 @@ import { AppComponent }   from './app.component';
 import { AppRoutes } from './app.routes';
 
 import { HomeComponent } from './components/home/home.component';
+import { Map3dComponent } from './components/map3d/map3d.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        Map3dComponent
     ],
     imports: [
         BrowserModule,
