@@ -57,7 +57,7 @@
     "@angular/compiler-cli": "^2.4.7",
     "@angular/platform-server": "^2.4.7",
     "@types/core-js": "^0.9.35",
-    "@types/node": "^6.0.63",
+    "@types/node": "~6.0.63",
     "concurrently": "^3.3.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
