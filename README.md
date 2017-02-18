@@ -20,10 +20,11 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
      git clone https://github.com/angular/angular2-seed.git
      ```
 
-  2. Install dependencies with npm:
+  2. Install dependencies with npm and bower:
 
      ```shell
      npm install
+     bower install
      ```
 
   3. Start with command
