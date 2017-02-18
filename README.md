@@ -1,6 +1,6 @@
-# Angular ArcGIS JSAPI 4.x App 
+# Angular & ArcGIS API for JavaScript Demo
 
-Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https://ng-bootstrap.github.io/)
+Angular 2.x and ArcGIS API for JavaScript 4.x Demo Project
 
 ## Tech stack
 
@@ -11,20 +11,20 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
   - scss
   - gulp
   - tree shaking
+  - ArcGIS API for JavaScript 4.x
 
 ## Usage
 
   1. Clone or fork this repository with git:
 
      ```shell
-     git clone https://github.com/angular/angular2-seed.git
+     git clone https://github.com/beginor/ng2-esri-demo.git
      ```
 
   2. Install dependencies with npm and bower:
 
      ```shell
      npm install
-     bower install
      ```
 
   3. Start with command
@@ -38,6 +38,8 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
      ```shell
      npm run build-aot
      ```
+
+     > note: aot build does not work with ArcGIS API for JavaScript
 
   5. Happy coding!.
 

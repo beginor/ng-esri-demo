@@ -16,7 +16,8 @@
     "tsc:w": "npm run tsc -- --watch",
     "tsc-aot": "tsc -p tsconfig-aot.json",
     "rollup": "rollup -c rollup.config.js",
-    "build-aot": "npm run build && npm run ngc && npm run tsc-aot && npm run rollup"
+    "build-aot": "npm run build && npm run ngc && npm run tsc-aot && npm run rollup",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -59,6 +60,7 @@
     "@types/arcgis-js-api": "^4.2.0",
     "@types/core-js": "^0.9.35",
     "@types/node": "~6.0.63",
+    "bower": "^1.8.0",
     "concurrently": "^3.3.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
