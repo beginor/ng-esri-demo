@@ -1,35 +1,35 @@
 import { Component, ElementRef, ViewChild, OnInit, OnDestroy } from '@angular/core';
 
-import SceneView = require('esri/views/SceneView');
+import MapView = require('esri/views/MapView');
 
 import { MapService } from '../../services/map.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'map3d',
-    templateUrl: './map3d.component.html',
-    styleUrls: ['./map3d.component.css'],
+    selector: 'map-view',
+    templateUrl: './map-view.component.html',
+    styleUrls: ['./map-view.component.css'],
     providers: [MapService]
 })
-export class Map3dComponent implements OnInit, OnDestroy {
+export class MapViewComponent implements OnInit, OnDestroy {
 
     @ViewChild('mapElement') private mapElement: ElementRef;
     
-    private sceneView: SceneView;
+    private mapView: MapView;
 
     constructor(private mapService: MapService) {
     }
 
     ngOnInit() {
-        this.sceneView = new SceneView({
+        this.mapView = new MapView({
             container: this.mapElement.nativeElement,
             map: this.mapService.map,
-            scale: 50000000,
+            zoom: 7,
             center: [113, 23.5]
         });
     }
 
     ngOnDestroy() {
-        this.sceneView.destroy();
+        this.mapView.destroy();
     }
 }
