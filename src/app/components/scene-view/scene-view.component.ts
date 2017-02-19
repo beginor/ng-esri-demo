@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild, OnInit, OnDestroy } from '@angular/core';
 
-import SceneView = require('esri/views/SceneView');
+import * as SceneView from 'esri/views/SceneView';
 
 import { MapService } from '../../services/map.service';
 
@@ -13,9 +13,9 @@ import { MapService } from '../../services/map.service';
 })
 export class SceneViewComponent implements OnInit, OnDestroy {
 
-    @ViewChild('mapElement') private mapElement: ElementRef;
+    @ViewChild('mapElement') mapElement: ElementRef;
     
-    private sceneView: SceneView;
+    sceneView: SceneView;
 
     constructor(private mapService: MapService) {
     }
