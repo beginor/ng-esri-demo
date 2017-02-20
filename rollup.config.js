@@ -2,8 +2,6 @@ import rollup      from 'rollup'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs    from 'rollup-plugin-commonjs';
 import uglify      from 'rollup-plugin-uglify'
-import ignore from 'rollup-plugin-ignore';
-import bowerResolve from 'rollup-plugin-bower-resolve';
 
 export default {
   entry: 'src/main-aot.js',
@@ -11,8 +9,7 @@ export default {
   sourceMap: false,
   format: 'amd',
   plugins: [
-      nodeResolve({jsnext: true, module: true}),
-      bowerResolve({
+      nodeResolve({
         jsnext: true,
         module: true,
         skip: ['esri']
@@ -20,7 +17,6 @@ export default {
       commonjs({
         include: 'node_modules/rxjs/**',
       }),
-      ignore(['esri/*']),
       uglify()
   ]
 }
