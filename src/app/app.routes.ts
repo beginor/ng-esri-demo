@@ -6,7 +6,7 @@ import { SceneViewComponent } from './components/scene-view/scene-view.component
 
 export const AppStates = UIRouterModule.forRoot({
     useHash: true,
-    otherwise: 'home',
+    otherwise: '/home',
     states: [
         { name: 'home', url: '/home', component: HomeComponent },
         { name: 'map-view', url: '/map-view', component: MapViewComponent },
