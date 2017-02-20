@@ -39,10 +39,4 @@ Angular 2.x and ArcGIS API for JavaScript 4.x Demo Project
      npm run build-aot
      ```
 
-     > note: aot build does not work with ArcGIS API for JavaScript
-
   5. Happy coding!.
-
-PS: the `master` branch use `rollup` to do aot build and tree shaking,
-if you prefer to build with [webpack](http://webpack.github.io), please check out the
-[webpack](https://github.com/beginor/angular-seed/tree/webpack) branch.
