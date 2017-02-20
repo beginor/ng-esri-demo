@@ -1,4 +1,22 @@
-<nav class="navbar fixed-top navbar-light bg-faded">
-  <a class="navbar-brand" [routerLink]="['']">Angular 2 Demo</a>
+<nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand" uiSref="home">Angular 2 Demo</a>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" uiSrefActive="active" uiSref="home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" uiSrefActive="active" uiSref="map-view">Map View</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" uiSrefActive="active" uiSref="scene-view">Scene View</a>
+        </li>
+    </ul>
+  </div>
 </nav>
-<router-outlet></router-outlet>
+<ui-view></ui-view>

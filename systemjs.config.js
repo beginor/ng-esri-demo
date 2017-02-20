@@ -25,6 +25,7 @@
       'rxjs': 'npm:rxjs',
       // ng-bootstrap
       '@ng-bootstrap/ng-bootstrap': 'npm:@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
+      'ui-router-ng2': 'npm:ui-router-ng2/_bundles/ui-router-ng2.js',
       'dojo-loader': 'npm:systemjs-plugin-dojo/dojo.js'
     },
     packages: {
