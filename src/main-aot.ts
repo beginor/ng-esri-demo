@@ -8,7 +8,7 @@ enableProdMode();
 platformBrowser()
     .bootstrapModuleFactory(AppModuleNgFactory)
     .then(val => {
-        console.log('app bootstrap');
+        // console.log('app bootstrap');
     })
     .catch(err => {
         console.error(err);

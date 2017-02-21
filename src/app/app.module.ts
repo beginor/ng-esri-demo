@@ -9,10 +9,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent }   from './app.component';
 import { RouteComponents, AppRoutes } from './app.routes';
 
-import { HomeComponent } from './components/home/home.component';
-import { MapViewComponent } from './components/map-view/map-view.component';
-import { SceneViewComponent } from './components/scene-view/scene-view.component';
-
 @NgModule({
     declarations: [
         AppComponent, RouteComponents

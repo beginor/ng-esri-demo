@@ -1,4 +1,4 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
