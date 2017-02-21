@@ -28,6 +28,7 @@ gulp.task('serve', function () {
         root: root,
         port: port,
         livereload: true,
+        fallback: 'index.html',
         // api proxy middleware
         middleware: function (conn, opts) {
             var restProxy = proxy('/rest', {
