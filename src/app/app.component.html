@@ -10,15 +10,15 @@
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarText">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" uiSrefActive="active" uiSref="home">Home</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" uiSrefActive="active" uiSref="map-view">Map View</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/map-view">Map View</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" uiSrefActive="active" uiSref="scene-view">Scene View</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/scene-view">Scene View</a>
         </li>
     </ul>
   </div>
 </nav>
-<ui-view></ui-view>
+<router-outlet></router-outlet>
