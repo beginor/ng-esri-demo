@@ -8,8 +8,7 @@ import { MapService } from '../../services/map.service';
     moduleId: module.id,
     selector: 'map-view',
     templateUrl: './map-view.component.html',
-    styleUrls: ['./map-view.component.css'],
-    providers: [MapService]
+    styleUrls: ['./map-view.component.css']
 })
 export class MapViewComponent implements OnInit, OnDestroy {
 

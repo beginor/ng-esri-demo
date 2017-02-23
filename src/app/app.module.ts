@@ -8,6 +8,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent }   from './app.component';
 import { RouteComponents, AppRoutes } from './app.routes';
+import { MapService } from './services/map.service';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { RouteComponents, AppRoutes } from './app.routes';
             { useHash: false, enableTracing: false }
         )
     ],
+    providers: [MapService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

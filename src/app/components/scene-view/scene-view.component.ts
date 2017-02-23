@@ -8,8 +8,7 @@ import { MapService } from '../../services/map.service';
     moduleId: module.id,
     selector: 'scene-view',
     templateUrl: './scene-view.component.html',
-    styleUrls: ['./scene-view.component.css'],
-    providers: [MapService]
+    styleUrls: ['./scene-view.component.css']
 })
 export class SceneViewComponent implements OnInit, OnDestroy {
 
