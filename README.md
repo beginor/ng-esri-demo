@@ -15,6 +15,9 @@ Angular 2.x and ArcGIS API for JavaScript 4.x Demo Project
 
 ## Usage
 
+> For Windows users, please make sure execute these commands in a bash shell
+> like Cygwin, Mingw, or Git Shell.
+
   1. Clone or fork this repository with git:
 
      ```shell
