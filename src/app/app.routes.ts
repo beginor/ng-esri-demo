@@ -2,8 +2,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 
-const routes: Routes = [
-    { path: '', component: HomeComponent }
+export const RouteComponents = [
+    HomeComponent
 ];
 
-export const AppRoutes = RouterModule.forRoot(routes, { useHash: true, enableTracing: false });
+export const AppRoutes = RouterModule.forRoot(
+    [
+        { path: '', component: HomeComponent }
+    ],
+    { useHash: true, enableTracing: false }
+);
