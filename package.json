@@ -16,8 +16,7 @@
     "tsc:w": "npm run tsc -- --watch",
     "tsc-aot": "tsc -p tsconfig-aot.json",
     "rollup": "rollup -c rollup.config.js",
-    "build-aot": "npm run build && npm run ngc && npm run tsc-aot && npm run rollup",
-    "postinstall": "bower install"
+    "build-aot": "npm run build && npm run ngc && npm run tsc-aot && npm run rollup"
   },
   "repository": {
     "type": "git",
