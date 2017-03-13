@@ -29,6 +29,6 @@ export class SceneViewComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.sceneView.destroy();
+        //this.sceneView.destroy();
     }
 }

@@ -29,6 +29,6 @@ export class MapViewComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.mapView.destroy();
+        //this.mapView.destroy();
     }
 }
