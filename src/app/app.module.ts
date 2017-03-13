@@ -22,10 +22,7 @@ import { MapService } from './services/map.service';
         HttpModule,
         JsonpModule,
         NgbModule,
-        RouterModule.forRoot(
-            AppRoutes,
-            { useHash: false, enableTracing: false }
-        )
+        AppRoutes
     ],
     providers: [MapService],
     bootstrap: [AppComponent]
