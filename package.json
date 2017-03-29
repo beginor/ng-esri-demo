@@ -52,7 +52,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^4.0.0",
     "@angular/platform-server": "^4.0.0",
-    "@types/core-js": "0.9.40",
+    "@types/core-js": "~0.9.40",
     "@types/node": "~7.0.12",
     "concurrently": "^3.4.0",
     "gulp": "^3.9.1",
