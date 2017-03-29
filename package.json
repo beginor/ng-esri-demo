@@ -51,17 +51,17 @@
   "devDependencies": {
     "@angular/compiler-cli": "^4.0.0",
     "@angular/platform-server": "^4.0.0",
-    "@types/core-js": "0.9.37",
-    "@types/node": "~6.0.66",
+    "@types/core-js": "0.9.40",
+    "@types/node": "~7.0.12",
     "concurrently": "^3.4.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "http-proxy-middleware": "0.17.4",
-    "node-sass": "^4.5.1",
+    "node-sass": "^4.5.2",
     "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1",
-    "typescript": "~2.2.1"
+    "typescript": "~2.2.2"
   }
 }
