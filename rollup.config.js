@@ -12,7 +12,7 @@ export default {
       nodeResolve({
         jsnext: true,
         module: true,
-        skip: ['esri']
+        externals: ['esri']
       }),
       commonjs({
         include: 'node_modules/rxjs/**',
