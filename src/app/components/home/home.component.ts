@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-    message: string = 'Hello, Angular 2 !';
+    message: string = 'Hello, Angular !';
     count: number = 0;
 
     onClick() {

@@ -1,11 +1,11 @@
 # Angular Seed App
 
-Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https://ng-bootstrap.github.io/)
+Seed project build with [Angular](https://angular.io/) and [ng-bootstrap](https://ng-bootstrap.github.io/)
 
 ## Tech stack
 
   - typescript
-  - angular 2
+  - angular
   - ng-bootstrap
   - font awesome
   - scss
@@ -17,7 +17,7 @@ Seed project build with [Angular2](https://angular.io/) and [ng-bootstrap](https
   1. Clone or fork this repository with git:
 
      ```shell
-     git clone https://github.com/angular/angular2-seed.git
+     git clone https://github.com/angular/angular-seed.git
      ```
 
   2. Install dependencies with npm:
