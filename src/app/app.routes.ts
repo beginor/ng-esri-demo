@@ -8,7 +8,8 @@ export const RouteComponents = [
 
 export const AppRoutes = RouterModule.forRoot(
     [
-        { path: '', component: HomeComponent }
+        { path: '', redirectTo: '/home', pathMatch: 'full' },
+        { path: 'home', component: HomeComponent }
     ],
     { useHash: true, enableTracing: false }
 );
