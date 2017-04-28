@@ -1,5 +1,5 @@
 /**
- * System configuration for Angular 2 samples
+ * System configuration for Angular samples
  * Adjust as necessary for your application needs.
  */
 (function (global) {
@@ -13,6 +13,7 @@
       // our app is within the dist folder
       'app': 'src',
       // angular bundles
+      "@angular/animations": "npm:@angular/animations/bundles/animations.umd.js",
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
       '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',

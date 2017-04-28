@@ -1,7 +1,7 @@
-// import rollup      from 'rollup'
+import rollup from 'rollup'
 import nodeResolve from 'rollup-plugin-node-resolve'
-import commonjs    from 'rollup-plugin-commonjs';
-import uglify      from 'rollup-plugin-uglify'
+import commonjs from 'rollup-plugin-commonjs';
+import uglify from 'rollup-plugin-uglify'
 
 export default {
   entry: 'src/main-aot.js',
@@ -9,14 +9,14 @@ export default {
   sourceMap: false,
   format: 'amd',
   plugins: [
-      nodeResolve({
-        jsnext: true,
-        module: true,
-        externals: ['esri']
-      }),
-      commonjs({
-        include: 'node_modules/rxjs/**',
-      }),
-      uglify()
+    nodeResolve({
+      jsnext: true,
+      module: true,
+      externals: ['esri']
+    }),
+    commonjs({
+      include: 'node_modules/rxjs/**',
+    }),
+    uglify()
   ]
 }

@@ -1,11 +1,11 @@
 # Angular & ArcGIS API for JavaScript Demo
 
-Angular 2.x and ArcGIS API for JavaScript 4.x Demo Project
+Angular and ArcGIS API for JavaScript 4.x Demo Project
 
 ## Tech stack
 
   - typescript
-  - angular 2
+  - angular
   - ng-bootstrap
   - font awesome
   - scss
@@ -24,7 +24,7 @@ Angular 2.x and ArcGIS API for JavaScript 4.x Demo Project
      git clone https://github.com/beginor/ng2-esri-demo.git
      ```
 
-  2. Install dependencies with npm and bower:
+  2. Install dependencies with npm:
 
      ```shell
      npm install
