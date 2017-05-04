@@ -46,7 +46,8 @@
     "zone.js": "^0.8.9",
     "bootstrap": "^4.0.0-alpha.6",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.25",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "web-animations-js": "^2.2.5"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^4.1.0",
@@ -62,6 +63,7 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^1.0.2",
-    "typescript": "~2.3.1"
+    "typescript": "~2.3.1",
+    "@types/web-animations-js": "^2.2.4"
   }
 }
