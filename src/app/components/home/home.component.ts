@@ -28,6 +28,8 @@ export class HomeComponent {
     message: string = 'Hello, Angular !';
     count: number = 0;
 
+    state: any;
+
     onClick() {
         this.message = `You have clicked ${++this.count} times!`;
     }
