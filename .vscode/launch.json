@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Chromium",
+      "url": "http://127.0.0.1:3000",
+      "webRoot": "${workspaceRoot}",
+      "osx": {
+        "runtimeExecutable": "/Applications/Chromium.app/Contents/MacOS/Chromium"
+      },
+      "disableNetworkCache": true
+    }
+  ]
+}
