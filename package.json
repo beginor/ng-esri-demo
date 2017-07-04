@@ -10,7 +10,7 @@
     "start": "npm run clean && npm run build && concurrently \"npm run tsc:w\" \"npm run sass:w\" \"npm run gulp:dev\"",
     "gulp:dev": "gulp dev",
     "gulp:serve": "gulp serve",
-    "clean": "rm -rf dist && find src -name \\*.js -type f -delete && find src -name \\*.js.map -type f -delete && find src -name \\*.ngfactory.ts -type f -delete && find src -name \\*.css -type f -delete && find src -name \\*.css.map -type f -delete && find src -name \\*.shim.ts -type f -delete && find src -name \\*.ngsummary.json -type f -delete && find src -name \\*.ngstyle.ts -type f -delete",
+    "clean": "rm -rf dist && rm -rf aot && find src -name \\*.js -type f -delete && find src -name \\*.js.map -type f -delete && find src -name \\*.css -type f -delete && find src -name \\*.css.map -type f -delete",
     "ngc": "ngc --project tsconfig-aot.json",
     "tsc": "tsc --project tsconfig.json",
     "tsc:w": "npm run tsc -- --watch",
