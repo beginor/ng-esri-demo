@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent }   from './app.component';
@@ -21,8 +20,8 @@ import { MapService } from './services/map.service';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpModule,
-        JsonpModule,
+        HttpClientModule,
+        HttpClientJsonpModule,
         NgbModule,
         AppRoutes
     ],
