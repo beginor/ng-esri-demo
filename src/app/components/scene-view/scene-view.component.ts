@@ -13,7 +13,7 @@ import { MapService } from '../../services/map.service';
 export class SceneViewComponent implements OnInit, OnDestroy {
 
     @ViewChild('mapElement') mapElement: ElementRef;
-    
+
     sceneView: SceneView;
 
     constructor(private mapService: MapService) {
@@ -24,7 +24,7 @@ export class SceneViewComponent implements OnInit, OnDestroy {
             container: this.mapElement.nativeElement,
             map: this.mapService.map,
             scale: 50000000,
-            center: [113, 23.5]
+            center: { x: 113, y: 23.5 }
         });
     }
 

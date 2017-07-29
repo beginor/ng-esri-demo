@@ -13,7 +13,7 @@ import { MapService } from '../../services/map.service';
 export class MapViewComponent implements OnInit, OnDestroy {
 
     @ViewChild('mapElement') mapElement: ElementRef;
-    
+
     mapView: MapView;
 
     constructor(private mapService: MapService) {
@@ -24,7 +24,7 @@ export class MapViewComponent implements OnInit, OnDestroy {
             container: this.mapElement.nativeElement,
             map: this.mapService.map,
             zoom: 7,
-            center: [113, 23.5]
+            center: { x: 113, y: 23.5 }
         });
     }
 
