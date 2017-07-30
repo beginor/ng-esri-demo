@@ -9,7 +9,8 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": false,
-    "lib": ["dom", "es2017"]
+    "lib": ["dom", "es2017"],
+    "importHelpers": true
   },
   "exclude": [
     ".idea",
