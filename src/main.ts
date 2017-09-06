@@ -14,8 +14,9 @@ function isLocal() {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
     .then(val => {
-        //console.log('app bootstrap');
+        // console.log('app bootstrap');
     })
     .catch(err => {
+        // tslint:disable-next-line:no-console
         console.error(err);
     });

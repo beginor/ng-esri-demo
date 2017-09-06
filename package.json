@@ -16,7 +16,8 @@
     "tsc:w": "npm run tsc -- --watch",
     "tsc-aot": "tsc -p tsconfig-aot.json",
     "rollup": "rollup -c rollup.config.js",
-    "build-aot": "npm run sass && npm run ngc && npm run tsc-aot && npm run rollup"
+    "build-aot": "npm run sass && npm run ngc && npm run tsc-aot && npm run rollup",
+    "tslint": "tslint --project tslint.json"
   },
   "repository": {
     "type": "git",
@@ -72,6 +73,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^2.0.1",
     "typescript": "~2.4.2",
-    "@types/web-animations-js": "^2.2.4"
+    "@types/web-animations-js": "^2.2.4",
+    "tslint": "^5.7.0"
   }
 }
