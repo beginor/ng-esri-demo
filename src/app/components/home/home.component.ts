@@ -1,4 +1,4 @@
-import { animate, transition, trigger, state, style } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -25,12 +25,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-    message: string = 'Hello, Angular !';
-    count: number = 0;
+    public message: string = 'Hello, Angular !';
+    public count: number = 0;
 
-    state: any;
+    public state: any;
 
-    onClick() {
+    public onClick() {
         this.message = `You have clicked ${++this.count} times!`;
     }
 
