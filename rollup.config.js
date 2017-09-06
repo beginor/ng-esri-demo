@@ -8,10 +8,12 @@ import uglify from 'rollup-plugin-uglify'
 import * as path from 'path';
 
 export default {
-    entry: 'src/main-aot.js',
-    dest: 'dist/build.js', // output a single application bundle
+    input: 'src/main-aot.js',
+    output: {
+        file: 'dist/build.js', // output a single application bundle
+        format: 'iife'
+    },
     sourceMap: false,
-    format: 'iife',
     external: [],
     plugins: [
         css({ output: 'dist/build.css' }),
