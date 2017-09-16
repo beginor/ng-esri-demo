@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    collapsed: boolean = true;
+    public collapsed: boolean = true;
 
 }

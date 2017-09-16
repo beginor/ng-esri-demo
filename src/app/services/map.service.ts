@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 
-import * as Map from 'esri/Map';
 import * as Basemap from 'esri/Basemap';
+import * as Map from 'esri/Map';
 
 @Injectable()
 export class MapService {
 
-    private _map: Map;
+    private mapInstance: Map;
 
     get map() {
-        if (!this._map) {
-            this._map = new Map({ basemap: Basemap.fromId('streets') });
+        if (!this.mapInstance) {
+            this.mapInstance = new Map({ basemap: Basemap.fromId('streets') });
         }
-        return this._map;
+        return this.mapInstance;
     }
 }

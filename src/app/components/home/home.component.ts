@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -25,15 +25,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-	public state: any;
+    public state: any;
 
     constructor() {
+        //
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
+        //
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
+        //
     }
 
 }

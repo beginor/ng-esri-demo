@@ -8,7 +8,7 @@ export const RouteComponents = [
     HomeComponent, MapViewComponent, SceneViewComponent
 ];
 
-let routes: Routes = [
+const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'map-view', component: MapViewComponent },
     { path: 'scene-view', component: SceneViewComponent },
@@ -18,4 +18,4 @@ let routes: Routes = [
 export const AppRoutes = RouterModule.forRoot(
     routes,
     { useHash: true, enableTracing: false }
-)
+);

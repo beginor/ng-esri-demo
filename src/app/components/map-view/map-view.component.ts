@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 import * as MapView from 'esri/views/MapView';
 
@@ -12,14 +12,14 @@ import { MapService } from '../../services/map.service';
 })
 export class MapViewComponent implements OnInit, OnDestroy {
 
-    @ViewChild('mapElement') mapElement: ElementRef;
+    @ViewChild('mapElement') public mapElement: ElementRef;
 
-    mapView: MapView;
+    private mapView: MapView;
 
     constructor(private mapService: MapService) {
     }
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.mapView = new MapView({
             container: this.mapElement.nativeElement,
             map: this.mapService.map,
@@ -28,7 +28,8 @@ export class MapViewComponent implements OnInit, OnDestroy {
         });
     }
 
-    ngOnDestroy() {
-        //this.mapView.destroy();
+    public ngOnDestroy(): void {
+        // this.mapView.destroy();
     }
+
 }
