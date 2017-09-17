@@ -1,11 +1,11 @@
-<nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/home">Angular + ArcGIS API Demo</a>
+
   <button class="navbar-toggler navbar-toggler-right" type="button"
     data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
     aria-expanded="false" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <a class="navbar-brand" uiSref="home">Angular + ArcGIS API Demo</a>
 
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarText">
     <ul class="navbar-nav">
