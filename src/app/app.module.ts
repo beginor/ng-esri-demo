@@ -22,7 +22,7 @@ import { AppRoutes, RouteComponents } from './app.routes';
         ReactiveFormsModule,
         HttpClientModule,
         HttpClientJsonpModule,
-        NgbModule,
+        NgbModule.forRoot(),
         AppRoutes
     ],
     bootstrap: [AppComponent]
