@@ -22,7 +22,7 @@ import { MapService } from './services/map.service';
         ReactiveFormsModule,
         HttpClientModule,
         HttpClientJsonpModule,
-        NgbModule,
+        NgbModule.forRoot(),
         AppRoutes
     ],
     providers: [MapService],

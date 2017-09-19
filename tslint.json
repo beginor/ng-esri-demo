@@ -2,13 +2,18 @@
   "tslint.enable": true,
   "extends": "tslint:recommended",
   "rules": {
-    "quotemark": [
-      "single"
-    ],
-    "no-console": true,
+    "quotemark": {
+      "options": "single"
+    },
+    "no-console": {
+      "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+    },
     "interface-name": false,
     "trailing-comma": false,
     "object-literal-sort-keys": false,
-    "arrow-parens": false
+    "arrow-parens": false,
+    "max-line-length": {
+      "options": [80]
+    }
   }
 }
