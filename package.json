@@ -1,7 +1,7 @@
 {
-  "name": "ng-seed",
+  "name": "ng-esri-demo",
   "version": "1.0.0",
-  "description": "angular seed app",
+  "description": "angular + arcgis js api seed app",
   "main": "index.html",
   "scripts": {
     "sass": "node-sass --recursive --source-map true --source-map-contents --output src src ",
@@ -21,10 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beginor/angular-seed.git"
+    "url": "git+https://github.com/beginor/ng-esri-demo.git"
   },
   "keywords": [
     "angular",
+    "arcgis js api",
     "seed",
     "gulp",
     "systemjs"
