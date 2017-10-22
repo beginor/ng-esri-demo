@@ -10,13 +10,13 @@ import * as path from 'path';
 export default {
     input: 'src/main-aot.js',
     output: {
-        file: 'dist/build.js', // output a single application bundle
+        file: 'dist/bundle.js', // output a single application bundle
         format: 'iife'
     },
     sourceMap: false,
     external: [],
     plugins: [
-        css({ output: 'dist/build.css' }),
+        css({ output: 'dist/bundle.css' }),
         alias({
             //'jszip': path.join(__dirname, './node_modules/jszip/dist/jszip.min.js')
         }),
