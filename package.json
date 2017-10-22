@@ -48,7 +48,7 @@
     "tslib": "~1.8.0",
     "core-js": "^2.5.1",
     "reflect-metadata": "^0.1.10",
-    "rxjs": "~5.5.0",
+    "rxjs": "~5.4.3",
     "systemjs": "^0.20.19",
     "zone.js": "^0.8.18",
     "bootstrap": "^4.0.0-beta.2",
