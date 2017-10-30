@@ -15,7 +15,7 @@ body {
     overflow-y: auto;
     margin: 0;
 
-    .app {
+    .app-root {
         //margin-top: 16px;
         display: block;
         @include full-width-height();
