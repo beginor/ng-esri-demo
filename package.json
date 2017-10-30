@@ -11,6 +11,7 @@
     "lint": "ng lint",
     "start": "ng serve",
     "test": "ng test",
+    "test-coverage": "ng test --single-run --code-coverage",
     "e2e": "ng e2e --webdriver-update false"
   },
   "repository": {
