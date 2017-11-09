@@ -2,7 +2,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
-import { SceneViewComponent } from './components/scene-view/scene-view.component';
+import {
+    SceneViewComponent
+} from './components/scene-view/scene-view.component';
 
 export const RouteComponents = [
     HomeComponent, MapViewComponent, SceneViewComponent

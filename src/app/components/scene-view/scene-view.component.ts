@@ -1,5 +1,9 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+    animate, state, style, transition, trigger
+} from '@angular/animations';
+import {
+    Component, ElementRef, OnDestroy, OnInit, ViewChild
+} from '@angular/core';
 
 import * as SceneView from 'esri/views/SceneView';
 

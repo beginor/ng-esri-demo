@@ -1,7 +1,7 @@
 import {
     animate, state, style, transition, trigger
 } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
