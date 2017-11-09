@@ -5,15 +5,13 @@ import {
     Component, ElementRef, OnDestroy, OnInit, ViewChild
 } from '@angular/core';
 
-import * as MapView from 'esri/views/MapView';
-
 import { MapService } from '../../services/map.service';
 
 @Component({
     moduleId: module.id,
     selector: 'map-view',
     templateUrl: './map-view.component.html',
-    styleUrls: ['./map-view.component.css'],
+    styleUrls: ['./map-view.component.scss'],
     animations: [
         trigger('state', [
             transition(':enter', [
@@ -37,18 +35,21 @@ export class MapViewComponent implements OnInit, OnDestroy {
 
     @ViewChild('mapElement') public mapElement: ElementRef;
 
-    private mapView: MapView;
+    private mapView: __esri.MapView;
 
     constructor(private mapService: MapService) {
     }
 
-    public ngOnInit(): void {
-        this.mapView = new MapView({
-            container: this.mapElement.nativeElement,
-            map: this.mapService.map,
-            zoom: 7,
-            center: { x: 113, y: 23.5 }
-        });
+    public async ngOnInit() {
+        try {
+            await this.mapService.createMapView(
+                this.mapElement.nativeElement
+            );
+        }
+        // tslint:disable-next-line:one-line
+        catch (ex) {
+            console.error(ex);
+        }
     }
 
     public ngOnDestroy(): void {

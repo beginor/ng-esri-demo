@@ -6,6 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { EsriLoaderModule } from 'angular-esri-loader';
+
 import { AppComponent } from './app.component';
 import { AppRoutes, RouteComponents } from './app.routes';
 import { MapService } from './services/map.service';
@@ -23,6 +26,7 @@ import { MapService } from './services/map.service';
         HttpClientModule,
         HttpClientJsonpModule,
         NgbModule.forRoot(),
+        EsriLoaderModule,
         AppRoutes
     ],
     providers: [MapService],
