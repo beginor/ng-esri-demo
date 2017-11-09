@@ -14,6 +14,9 @@
     "arrow-parens": false,
     "max-line-length": {
       "options": [80]
+    },
+    "one-line": {
+      "options": ["check-open-brace", "check-whitespace"]
     }
   }
 }
