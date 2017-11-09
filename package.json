@@ -12,7 +12,8 @@
     "start": "ng serve",
     "test": "ng test",
     "test-coverage": "ng test --single-run --code-coverage",
-    "e2e": "ng e2e --webdriver-update false"
+    "e2e": "ng e2e --webdriver-update false",
+    "webdriver-update": "webdriver-manager update --proxy http://127.0.0.1:60046"
   },
   "repository": {
     "type": "git",
