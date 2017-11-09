@@ -8,9 +8,7 @@ Angular and ArcGIS API for JavaScript 4.x Demo Project
   - angular
   - ng-bootstrap
   - font awesome
-  - scss
-  - gulp
-  - tree shaking
+  - angular-cli
   - ArcGIS API for JavaScript 4.x
 
 ## Usage
@@ -21,7 +19,7 @@ Angular and ArcGIS API for JavaScript 4.x Demo Project
   1. Clone or fork this repository with git:
 
      ```shell
-     git clone https://github.com/beginor/ng2-esri-demo.git
+     git clone https://github.com/beginor/ng-esri-demo.git
      ```
 
   2. Install dependencies with npm:

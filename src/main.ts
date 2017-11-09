@@ -2,14 +2,10 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-if (!isLocal()) {
+if (environment.production) {
     enableProdMode();
-}
-
-function isLocal() {
-    return document.location.href.indexOf('127.0.0.1') > -1
-        || document.location.hash.indexOf('localhost') > -1;
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
