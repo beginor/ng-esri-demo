@@ -23,7 +23,9 @@
         "../node_modules/font-awesome/css/font-awesome.css",
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "./dojo.config.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
