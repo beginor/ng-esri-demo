@@ -22,8 +22,7 @@ export class MapService {
         if (!!this.mapInstance) {
             return this.mapInstance;
         }
-        const loader = await this.setup();
-        const [Map, Basemap] = await loader.loadModules([
+        const [Map, Basemap] = await this.esriLoader.loadModules([
             'esri/Map',
             'esri/Basemap'
         ]);
@@ -38,9 +37,10 @@ export class MapService {
     public async createMapView(
         element: HTMLDivElement
     ): Promise<EsriWrapper<__esri.MapView>> {
-        const loader = await this.setup();
         const theMap = await this.getMap();
-        const [MapView] = await loader.loadModules(['esri/views/MapView']);
+        const [MapView] = await this.esriLoader.loadModules([
+            'esri/views/MapView'
+        ]);
         const opts: __esri.MapViewProperties = {
             container: element,
             map: theMap,
@@ -53,9 +53,10 @@ export class MapService {
     public async createSceneView(
         element: HTMLDivElement
     ): Promise<EsriWrapper<__esri.SceneView>> {
-        const loader = await this.setup();
         const theMap = await this.getMap();
-        const [SceneView] = await loader.loadModules(['esri/views/SceneView']);
+        const [SceneView] = await this.esriLoader.loadModules([
+            'esri/views/SceneView'
+        ]);
         const opts: __esri.SceneViewProperties = {
             container: element,
             map: theMap,

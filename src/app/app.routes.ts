@@ -5,13 +5,20 @@ import { MapViewComponent } from './components/map-view/map-view.component';
 import {
     SceneViewComponent
 } from './components/scene-view/scene-view.component';
+import { EsriLoaderGuard } from './services/esri-loader.guard';
 
 export const RouteComponents = [
     HomeComponent, MapViewComponent, SceneViewComponent
 ];
 
 const routes: Routes = [
-    { path: 'home', component: HomeComponent },
+    {
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [
+            EsriLoaderGuard
+        ]
+    },
     { path: 'map-view', component: MapViewComponent },
     { path: 'scene-view', component: SceneViewComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' }

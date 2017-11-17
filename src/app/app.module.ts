@@ -11,6 +11,7 @@ import { EsriLoaderModule } from 'angular-esri-loader';
 
 import { AppComponent } from './app.component';
 import { AppRoutes, RouteComponents } from './app.routes';
+import { EsriLoaderGuard } from './services/esri-loader.guard';
 import { MapService } from './services/map.service';
 
 @NgModule({
@@ -29,7 +30,10 @@ import { MapService } from './services/map.service';
         EsriLoaderModule,
         AppRoutes
     ],
-    providers: [MapService],
+    providers: [
+        MapService,
+        EsriLoaderGuard
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
