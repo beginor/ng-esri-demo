@@ -33,7 +33,11 @@
       "problemMatcher": [
         "$tsc",
         "$node-sass"
-      ]
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "label": "npm:build-prod",
@@ -46,7 +50,11 @@
       "problemMatcher": [
         "$tsc",
         "$node-sass"
-      ]
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "label": "npm:lint",
@@ -80,7 +88,12 @@
       "args": [
         "run",
         "test"
-      ]
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
     },
     {
       "label": "npm:test-coverage",
@@ -89,7 +102,12 @@
       "args": [
         "run",
         "test-coverage"
-      ]
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
     },
     {
       "label": "npm:e2e",
@@ -99,7 +117,11 @@
         "run",
         "e2e"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
     },
     {
       "label": "npm:webdriver-update",
