@@ -5,9 +5,6 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
-//   seleniumServerJar: './node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar',
-  chromeDriver: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.33',
-  geckoDriver: './node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.19.0',
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
