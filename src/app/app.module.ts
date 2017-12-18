@@ -7,16 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { EsriLoaderModule } from 'angular-esri-loader';
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppRoutes, RouteComponents } from './app.routes';
-import { EsriLoaderGuard } from './services/esri-loader.guard';
-import { MapService } from './services/map.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
     declarations: [
-        AppComponent, RouteComponents
+        AppComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
@@ -27,12 +25,7 @@ import { MapService } from './services/map.service';
         HttpClientModule,
         HttpClientJsonpModule,
         NgbModule.forRoot(),
-        EsriLoaderModule,
-        AppRoutes
-    ],
-    providers: [
-        MapService,
-        EsriLoaderGuard
+        AppRoutingModule
     ],
     bootstrap: [AppComponent]
 })

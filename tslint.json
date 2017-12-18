@@ -17,6 +17,7 @@
     },
     "one-line": {
       "options": ["check-open-brace", "check-whitespace"]
-    }
+    },
+    "no-empty": false
   }
 }

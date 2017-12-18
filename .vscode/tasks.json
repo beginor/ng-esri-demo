@@ -1,35 +1,137 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "0.1.0",
-    "command": "npm",
-    "isShellCommand": true,
-    "showOutput": "always",
-    "suppressTaskName": true,
-    "tasks": [
-        {
-            "taskName": "install",
-            "args": ["install"]
-        },
-        {
-            "taskName": "build",
-            "args": ["run", "build"]
-        },
-        {
-            "taskName": "start",
-            "args": ["start"]
-        },
-        {
-            "taskName": "serve",
-            "args": ["run", "gulp:serve"]
-        },
-        {
-            "taskName": "build-aot",
-            "args": ["run", "build-aot"]
-        },
-        {
-            "taskName": "test",
-            "args": ["run", "test"]
-        }
-    ]
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm:install",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "install"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "npm:clean",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "clean"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "npm:build",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "build"
+      ],
+      "problemMatcher": [
+        "$tsc",
+        "$node-sass"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "npm:build-prod",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "build-prod"
+      ],
+      "problemMatcher": [
+        "$tsc",
+        "$node-sass"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "npm:lint",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "lint"
+      ],
+      "problemMatcher": [
+        "$tslint5"
+      ]
+    },
+    {
+      "label": "npm:start",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "start"
+      ],
+      "problemMatcher": [
+        "$tsc-watch",
+        "$node-sass"
+      ]
+    },
+    {
+      "label": "npm:test",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "test"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "npm:test-coverage",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "test-coverage"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "npm:e2e",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "e2e"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "npm:webdriver-update",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "webdriver-update"
+      ],
+      "problemMatcher": []
+    }
+  ]
 }
