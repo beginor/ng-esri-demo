@@ -17,13 +17,14 @@ export class EsriLoaderGuard implements CanActivate {
     ): Promise<boolean> {
         try {
             await this.esriLoader.load({
-                url: 'https://js.arcgis.com/4.4/init.js'
+                url: 'https://js.arcgis.com/4.6/init.js'
             });
             const [config] = await this.esriLoader.loadModules([
                 'esri/config'
             ]);
             config.request.corsEnabledServers.push(
-                'map.geoq.cn'
+                'map.geoq.cn',
+                'map.geoq.cn:443'
             );
             return true;
         }
