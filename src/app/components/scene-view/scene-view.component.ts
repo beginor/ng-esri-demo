@@ -42,9 +42,18 @@ export class SceneViewComponent implements OnInit, OnDestroy {
 
     public async ngOnInit() {
         try {
-            await this.mapService.createSceneView(
+            const wrapper = await this.mapService.createSceneView(
                 this.mapElement.nativeElement
             );
+            this.sceneView = wrapper.val;
+            const localSource = await this.mapService.createLocalSource(
+                './assets/base-map.config.json'
+            );
+            const gallery = await this.mapService.createBasemapsGallery({
+                view: this.sceneView,
+                source: localSource
+            });
+            this.sceneView.ui.add(gallery, 'top-left');
         }
         catch (ex) {
             console.error(ex);

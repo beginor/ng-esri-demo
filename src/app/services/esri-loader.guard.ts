@@ -11,19 +11,25 @@ export class EsriLoaderGuard implements CanActivate {
         private esriLoader: EsriLoaderService
     ) { }
 
-    public canActivate(
+    public async canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Promise<boolean> {
-        return new Promise<boolean>((resolve, reject) => {
-            this.esriLoader.load({
-                url: 'https://js.arcgis.com/4.5/init.js'
-            }).then(() => {
-                resolve(true);
-            }).catch((err) => {
-                console.error(err);
-                resolve(false);
+        try {
+            await this.esriLoader.load({
+                url: 'https://js.arcgis.com/4.4/init.js'
             });
-        });
+            const [config] = await this.esriLoader.loadModules([
+                'esri/config'
+            ]);
+            config.request.corsEnabledServers.push(
+                'map.geoq.cn'
+            );
+            return true;
+        }
+        catch (ex) {
+            console.error(ex);
+            return false;
+        }
     }
 }

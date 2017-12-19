@@ -40,11 +40,20 @@ export class MapViewComponent implements OnInit, OnDestroy {
     constructor(private mapService: MapService) {
     }
 
-    public async ngOnInit() {
+    public async ngOnInit(): Promise<void> {
         try {
-            await this.mapService.createMapView(
+            const wrapper = await this.mapService.createMapView(
                 this.mapElement.nativeElement
             );
+            this.mapView = wrapper.val;
+            const localSource = await this.mapService.createLocalSource(
+                './assets/base-map.config.json'
+            );
+            const gallery = await this.mapService.createBasemapsGallery({
+                view: this.mapView,
+                source: localSource
+            });
+            this.mapView.ui.add(gallery, 'top-left');
         }
         // tslint:disable-next-line:one-line
         catch (ex) {
