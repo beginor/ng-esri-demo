@@ -5,7 +5,8 @@ import {
     Component, ElementRef, OnDestroy, OnInit, ViewChild
 } from '@angular/core';
 
-import { MapService } from '../../services/map.service';
+import { EsriMapService } from 'ng-esri-service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     moduleId: module.id,
@@ -37,22 +38,41 @@ export class SceneViewComponent implements OnInit, OnDestroy {
 
     private sceneView: __esri.SceneView;
 
-    constructor(private mapService: MapService) {
+    constructor(
+        private mapService: EsriMapService,
+        private http: HttpClient
+    ) {
     }
 
     public async ngOnInit() {
         try {
-            const wrapper = await this.mapService.createSceneView(
-                this.mapElement.nativeElement
+            const basemap = await this.mapService.createBasemapFromId(
+                'streets'
             );
-            this.sceneView = wrapper.val;
-            const localSource = await this.mapService.createLocalSource(
-                './assets/base-map.config.json'
-            );
-            const gallery = await this.mapService.createBasemapsGallery({
-                view: this.sceneView,
-                source: localSource
+            const map = await this.mapService.createMap({
+                basemap: basemap.val
             });
+            const wrapper = await this.mapService.createSceneView({
+                container: this.mapElement.nativeElement,
+                map,
+                zoom: 7,
+                center: { longitude: 113.2, latitude: 23.4 }
+            });
+            this.sceneView = wrapper.val;
+            const arr = await this.http.get<any[]>(
+                './assets/base-map.config.json'
+            ).toPromise();
+
+            const localSource = await this.mapService.createLocalSource(
+                arr
+            );
+            const gallery = await this.mapService.createBasemapsGallery(
+                {
+                    view: this.sceneView,
+                    source: localSource
+                }, {
+                    expandTooltip: '底图'
+                });
             this.sceneView.ui.add(gallery, 'top-left');
         }
         catch (ex) {

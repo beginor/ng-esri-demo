@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { EsriLoaderModule } from 'angular-esri-loader';
+import { EsriLoaderGuard, EsriMapService } from 'ng-esri-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,8 +16,7 @@ import { MapViewComponent } from './components/map-view/map-view.component';
 import {
     SceneViewComponent
 } from './components/scene-view/scene-view.component';
-import { EsriLoaderGuard } from './services/esri-loader.guard';
-import { MapService } from './services/map.service';
+import { createEsriLoaderOptions } from './config/factories';
 
 @NgModule({
     declarations: [
@@ -35,13 +34,13 @@ import { MapService } from './services/map.service';
         HttpClientModule,
         HttpClientJsonpModule,
         NgbModule.forRoot(),
-        EsriLoaderModule,
         AppRoutingModule
     ],
     bootstrap: [AppComponent],
     providers: [
-        MapService,
-        EsriLoaderGuard
+        EsriMapService,
+        EsriLoaderGuard,
+        { provide: 'ESRI_LOADER_OPTIONS', useFactory: createEsriLoaderOptions }
     ]
 })
 export class AppModule {}

@@ -47,7 +47,8 @@
     "bootstrap": "^4.0.0-beta.2",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.7",
     "font-awesome": "^4.7.0",
-    "angular-esri-loader": "^1.1.0"
+    "esri-loader": "^2.0.0",
+    "ng-esri-service": "^1.1.0"
   },
   "devDependencies": {
     "@angular/cli": "1.6.0",

@@ -5,7 +5,9 @@ import {
     Component, ElementRef, OnDestroy, OnInit, ViewChild
 } from '@angular/core';
 
-import { MapService } from '../../services/map.service';
+import { HttpClient } from '@angular/common/http';
+
+import { EsriMapService } from 'ng-esri-service';
 
 @Component({
     moduleId: module.id,
@@ -37,22 +39,42 @@ export class MapViewComponent implements OnInit, OnDestroy {
 
     private mapView: __esri.MapView;
 
-    constructor(private mapService: MapService) {
+    constructor(
+        private mapService: EsriMapService,
+        private http: HttpClient
+    ) {
     }
 
     public async ngOnInit(): Promise<void> {
         try {
-            const wrapper = await this.mapService.createMapView(
-                this.mapElement.nativeElement
+            const basemap = await this.mapService.createBasemapFromId(
+                'streets'
             );
-            this.mapView = wrapper.val;
-            const localSource = await this.mapService.createLocalSource(
-                './assets/base-map.config.json'
-            );
-            const gallery = await this.mapService.createBasemapsGallery({
-                view: this.mapView,
-                source: localSource
+            const map = await this.mapService.createMap({
+                basemap: basemap.val
             });
+            const wrapper = await this.mapService.createMapView({
+                container: this.mapElement.nativeElement,
+                map,
+                zoom: 7,
+                center: { longitude: 113.2, latitude: 23.4 }
+            });
+            this.mapView = wrapper.val;
+
+            const arr = await this.http.get<any[]>(
+                './assets/base-map.config.json'
+            ).toPromise();
+
+            const localSource = await this.mapService.createLocalSource(
+                arr
+            );
+            const gallery = await this.mapService.createBasemapsGallery(
+                {
+                    view: this.mapView,
+                    source: localSource
+                }, {
+                    expandTooltip: '底图'
+                });
             this.mapView.ui.add(gallery, 'top-left');
         }
         // tslint:disable-next-line:one-line
