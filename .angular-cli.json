@@ -19,6 +19,11 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
+        "../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
+        "../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
+        "../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
         "styles.scss"
       ],
       "scripts": [],

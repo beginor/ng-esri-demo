@@ -45,10 +45,7 @@
     "web-animations-js": "^2.3.1",
     "bootstrap": "^4.0.0-beta.3",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.9",
-    "@fortawesome/fontawesome": "^1.1.0",
-    "@fortawesome/fontawesome-free-brands": "^5.0.2",
-    "@fortawesome/fontawesome-free-regular": "^5.0.2",
-    "@fortawesome/fontawesome-free-solid": "^5.0.2"
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.2"
   },
   "devDependencies": {
     "@angular/cli": "1.6.3",
