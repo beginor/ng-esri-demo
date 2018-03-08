@@ -8,10 +8,6 @@ import { ILoadScriptOptions, loadModules, loadScript } from 'esri-loader';
 @Injectable()
 export class EsriLoaderGuard implements CanActivate {
 
-    constructor(
-
-    ) { }
-
     public async canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
@@ -22,10 +18,9 @@ export class EsriLoaderGuard implements CanActivate {
             await loadScript(options);
             // add cors enabled hosts
             const [config] = await loadModules(['esri/config']);
-            const hosts = this.getCorsEnabledHosts();
-            for (const host of hosts) {
+            this.getCorsEnabledHosts().forEach(host => {
                 config.request.corsEnabledServers.push(host);
-            }
+            });
             return true;
         }
         catch (ex) {
