@@ -24,7 +24,6 @@
         "styles.scss"
       ],
       "scripts": [
-        "./dojo.config.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

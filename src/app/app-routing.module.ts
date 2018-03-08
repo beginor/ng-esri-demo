@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { EsriLoaderGuard } from 'ng-esri-service';
+import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 import { HomeComponent } from './components/home/home.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
