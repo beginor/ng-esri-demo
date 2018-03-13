@@ -3,32 +3,24 @@ import {
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
+import * as anims from '../../app-animations';
+
 @Component({
     moduleId: module.id,
-    selector: 'home',
+    selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     animations: [
         trigger('state', [
-            transition(':enter', [
-                style({
-                    opacity: 0
-                }),
-                animate(300)
-            ]),
-            transition(':leave', [
-                animate(300),
-                style({
-                    opacity: 0
-                })
-            ])
+            anims.fadeIn(),
+            anims.fadeOut()
         ])
     ]
 })
 export class HomeComponent {
 
-    public message: string = 'Hello, Angular !';
-    public count: number = 0;
+    public message = 'Hello, Angular !';
+    public count = 0;
 
     public state: any;
 
