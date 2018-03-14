@@ -12,8 +12,8 @@ import * as anims from '../../app-animations';
     styleUrls: ['./home.component.scss'],
     animations: [
         trigger('state', [
-            anims.fadeIn(),
-            anims.fadeOut()
+            anims.fadeIn(':enter'),
+            anims.fadeOut(':leave')
         ])
     ]
 })

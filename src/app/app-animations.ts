@@ -1,7 +1,12 @@
-import { animate, style, transition } from '@angular/animations';
+import {
+    animate,
+    style,
+    transition,
+    AnimationMetadata
+} from '@angular/animations';
 
-export function fadeIn() {
-    return transition(':enter', [
+export function fadeIn(stateChangeExpr: string): AnimationMetadata {
+    return transition(stateChangeExpr, [
         style({
             opacity: 0
         }),
@@ -9,8 +14,8 @@ export function fadeIn() {
     ]);
 }
 
-export function fadeOut() {
-    return transition(':leave', [
+export function fadeOut(stateChangeExpr: string): AnimationMetadata {
+    return transition(stateChangeExpr, [
         animate(300),
         style({
             opacity: 0
