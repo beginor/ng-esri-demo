@@ -1,3 +1,15 @@
+@import '../base';
+
 :host {
-    // background-color: #FF0;
+  // background-color: #ccc;
+
+  .navbar-brand {
+    text-shadow: 0 0 1px #ffffff;
+  }
+
+  .app-main {
+    @include full-width-height();
+    @include no-margin-padding();
+  }
+
 }
