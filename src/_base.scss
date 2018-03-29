@@ -1,5 +1,8 @@
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+$enable-shadows: true;
 
 @mixin full-width-height() {
   width: 100%;
@@ -9,9 +12,4 @@
 @mixin no-margin-padding() {
   margin: 0;
   padding: 0;
-}
-
-@mixin drop-shadow() {
-  -webkit-box-shadow: 0 0 4px 0 $dark;
-  box-shadow: 0 0 4px 0 $dark;
 }
