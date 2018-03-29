@@ -3,8 +3,12 @@
 :host {
   // background-color: #ccc;
 
-  .navbar-brand {
-    text-shadow: 0 0 1px #ffffff;
+  .navbar {
+    @include drop-shadow();
+
+    .navbar-brand {
+      text-shadow: 0 0 1px $light;
+    }
   }
 
   .app-main {
