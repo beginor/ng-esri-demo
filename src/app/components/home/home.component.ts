@@ -1,18 +1,18 @@
-import {
-    animate, state, style, transition, trigger
-} from '@angular/animations';
+import { trigger, transition, useAnimation } from '@angular/animations';
 import { Component, OnInit, HostBinding } from '@angular/core';
 
-import { fadeInAnimation } from '../../animations';
+import { fadeIn } from '../../animations';
 
 @Component({
     moduleId: module.id,
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    animations: [fadeInAnimation],
+    animations: [
+        trigger('fadeIn', [transition(':enter', useAnimation(fadeIn))])
+    ],
     // tslint:disable-next-line:use-host-property-decorator
-    host: { '[@fadeInAnimation]': '' }
+    host: { '[@fadeIn]': '' }
 })
 export class HomeComponent {
 
