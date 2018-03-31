@@ -11,7 +11,6 @@ import { fadeIn } from '../../animations';
     animations: [
         trigger('fadeIn', [transition(':enter', useAnimation(fadeIn))])
     ],
-    // tslint:disable-next-line:use-host-property-decorator
     host: { '[@fadeIn]': '' }
 })
 export class HomeComponent {
