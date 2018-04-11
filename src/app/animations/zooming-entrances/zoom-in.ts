@@ -11,7 +11,8 @@ export const zoomIn = animation([
         }),
         style({
             offset: 0.5,
-            opacity: 1
+            opacity: 1,
+            transform: 'scale3d(1, 1, 1)'
         })
     ]))
 ]);
