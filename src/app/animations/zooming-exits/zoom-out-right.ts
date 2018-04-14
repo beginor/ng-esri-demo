@@ -5,6 +5,9 @@ import {
 export const zoomOutRight = animation([
     animate('1s 0.1s', keyframes([
         style({
+            offset: 0
+        }),
+        style({
             offset: 0.4,
             opacity: 1,
             transform: 'scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0)'

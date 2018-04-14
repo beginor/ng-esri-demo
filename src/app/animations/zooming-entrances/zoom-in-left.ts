@@ -15,6 +15,9 @@ export const zoomInLeft = animation([
             opacity: 1,
             transform: 'scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0)',
             animationTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1)'
+        }),
+        style({
+            offset: 1
         })
     ]))
 ]);

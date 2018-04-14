@@ -47,7 +47,7 @@ export const bounce = animation([
         }),
         style({
             offset: 0.9,
-            transform: 'transform: translate3d(0, -4px, 0)'
+            transform: 'translate3d(0, -4px, 0)'
         }),
         style({
             offset: 1,

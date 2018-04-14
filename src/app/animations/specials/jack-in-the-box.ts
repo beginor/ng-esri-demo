@@ -7,15 +7,17 @@ export const jackInTheBox = animation([
         style({
             offset: 0,
             opacity: 0,
-            transform: 'scale(0.1) rotate(30deg)',
-            transformOrigin: 'center bottom'
+            transformOrigin: 'center bottom',
+            transform: 'scale(0.1) rotate(30deg)'
         }),
         style({
             offset: 0.5,
+            opacity: 0.5,
             transform: 'rotate(-10deg)'
         }),
         style({
             offset: 0.7,
+            opacity: 0.7,
             transform: 'rotate(3deg)'
         }),
         style({
