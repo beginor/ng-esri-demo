@@ -6,7 +6,7 @@ export const lightSpeedOut = animation([
     style({
         animationTimingFunction: 'ease-in'
     }),
-    animate('1s 0.1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             opacity: 1

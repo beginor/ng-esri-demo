@@ -9,12 +9,13 @@ import {
     fadeInRightBig, fadeInUp, fadeInUpBig, fadeOut, fadeOutDown, fadeOutDownBig,
     fadeOutLeft, fadeOutLeftBig, fadeOutRight, fadeOutRightBig, fadeOutUp,
     fadeOutUpBig, flip, flipInX, flipInY, flipOutX, flipOutY, lightSpeedIn,
-    lightSpeedOut, rotateIn, rotateInDownLeft, rotateInDownRight, rotateInUpLeft
-    , rotateInUpRight, rotateOut, rotateOutDownLeft, rotateOutDownRight,
-    rotateOutUpLeft, rotateOutUpRight, slideInDown, slideInLeft, slideInRight,
-    slideInUp, slideOutDown, slideOutLeft, slideOutRight, slideOutUp, hinge,
-    jackInTheBox, rollIn, rollOut, zoomIn, zoomInDown, zoomInLeft, zoomInRight,
-    zoomInUp, zoomOut, zoomOutDown, zoomOutLeft, zoomOutRight, zoomOutUp
+    lightSpeedOut, rotateIn, rotateInDownLeft, rotateInDownRight,
+    rotateInUpLeft, rotateInUpRight, rotateOut, rotateOutDownLeft,
+    rotateOutDownRight, rotateOutUpLeft, rotateOutUpRight, slideInDown,
+    slideInLeft, slideInRight, slideInUp, slideOutDown, slideOutLeft,
+    slideOutRight, slideOutUp, hinge, jackInTheBox, rollIn, rollOut, zoomIn,
+    zoomInDown, zoomInLeft, zoomInRight, zoomInUp, zoomOut, zoomOutDown,
+    zoomOutLeft, zoomOutRight, zoomOutUp
 } from '../../animations';
 
 @Component({

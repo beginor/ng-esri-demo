@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const flash = animation([
-    animate('1s .1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             opacity: 1

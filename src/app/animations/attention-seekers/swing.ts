@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const swing = animation([
-    animate('1s .1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0.2,
             transform: 'rotate3d(0, 0, 1, 15deg)'

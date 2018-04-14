@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const bounceInUp = animation([
-    animate('1s 0.1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             animationTimingFunction: 'cubic-bezier(0.215, 0.61, 0.355, 1)',

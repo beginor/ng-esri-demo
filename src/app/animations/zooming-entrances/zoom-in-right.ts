@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const zoomInRight = animation([
-    animate('.75s 0.075s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             opacity: 0,

@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const bounceOut = animation([
-    animate('0.75s 0.1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0.2,
             transform: 'scale3d(0.9, 0.9, 0.9)'

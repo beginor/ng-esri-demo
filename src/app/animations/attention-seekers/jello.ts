@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const jello = animation([
-    animate('1s .1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             transform: 'translate3d(0, 0, 0)',

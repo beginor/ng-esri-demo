@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const tada = animation([
-    animate('1s .1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             transform: 'scale3d(1, 1, 1)'

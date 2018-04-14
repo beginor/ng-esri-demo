@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const hinge = animation([
-    animate('2s 0.1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             transformOrigin: 'top left',

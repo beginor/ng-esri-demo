@@ -6,7 +6,7 @@ export const flipInY = animation([
     style({
         backfaceVisibility: 'visible !important'
     }),
-    animate('1s 0.1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             transform: 'perspective(400px) rotate3d(0, 1, 0, 90deg)',

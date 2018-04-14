@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const headShake = animation([
-    animate('1s .1s ease-in-out', keyframes([
+    animate('.75s ease-in-out', keyframes([
         style({
             offset: 0,
             transform: 'translateX(0)'

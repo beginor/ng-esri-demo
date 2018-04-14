@@ -6,7 +6,7 @@ export const flipOutX = animation([
     style({
         backfaceVisibility: 'visible !important'
     }),
-    animate('0.75s 0.1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             transform: 'perspective(400px)'

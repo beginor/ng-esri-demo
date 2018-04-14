@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const rubberBand = animation([
-    animate('1s .1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0,
             transform: 'scale3d(1, 1, 1)'

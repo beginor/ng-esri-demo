@@ -3,7 +3,7 @@ import {
 } from '@angular/animations';
 
 export const zoomOutDown = animation([
-    animate('1s 0.1s', keyframes([
+    animate('.75s', keyframes([
         style({
             offset: 0
         }),
