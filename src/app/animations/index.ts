@@ -88,7 +88,3 @@ export * from './zooming-exits/zoom-out-down';
 export * from './zooming-exits/zoom-out-left';
 export * from './zooming-exits/zoom-out-right';
 export * from './zooming-exits/zoom-out-up';
-
-// export * from './fade-in';
-// export * from './flip';
-// export * from './flip-in-x';
