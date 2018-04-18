@@ -5,6 +5,8 @@ import {
 
 import { ILoadScriptOptions, loadModules, loadScript } from 'esri-loader';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class EsriLoaderGuard implements CanActivate {
 
@@ -31,21 +33,14 @@ export class EsriLoaderGuard implements CanActivate {
 
     private getOptions(): ILoadScriptOptions {
         return {
-            url: 'https://js.arcgis.com/4.6/init.js',
-            css: 'https://js.arcgis.com/4.6/esri/css/main.css',
-            dojoConfig: {
-                locale: 'zh-cn',
-                async: true
-            }
+            url: `${environment.arcgisJsApi}/init.js`,
+            css: `${environment.arcgisJsApi}/esri/css/main.css`,
+            dojoConfig: environment.dojoConfig
         };
     }
 
-    private getCorsEnabledHosts() {
-        return [
-            { host: 'map.geoq.cn', withCredentials: true },
-            { host: 'map.geoq.cn:443', withCredentials: true },
-            '127.0.0.1:4200'
-        ];
+    private getCorsEnabledHosts(): any[] {
+        return environment.corsEnabledHosts;
     }
 
 }

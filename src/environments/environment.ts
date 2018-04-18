@@ -5,5 +5,15 @@
 // which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    arcgisJsApi: 'https://js.arcgis.com/4.6',
+    corsEnabledHosts: [
+        { host: 'map.geoq.cn', withCredentials: true },
+        { host: 'map.geoq.cn:443', withCredentials: true },
+        '127.0.0.1:4200'
+    ],
+    dojoConfig: {
+        locale: 'zh-cn',
+        async: true
+    }
 };
