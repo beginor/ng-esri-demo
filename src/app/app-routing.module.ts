@@ -5,6 +5,10 @@ import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { MapViewComponent } from './components/map-view/map-view.component';
+import {
+    SceneViewComponent
+} from './components/scene-view/scene-view.component';
 
 const routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
