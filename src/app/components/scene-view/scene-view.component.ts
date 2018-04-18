@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
     moduleId: module.id,
-    selector: 'scene-view',
+    selector: 'app-scene-view',
     templateUrl: './scene-view.component.html',
     styleUrls: ['./scene-view.component.scss'],
     animations: [

@@ -11,7 +11,7 @@ import { EsriMapService } from 'ng-esri-service';
 
 @Component({
     moduleId: module.id,
-    selector: 'map-view',
+    selector: 'app-map-view',
     templateUrl: './map-view.component.html',
     styleUrls: ['./map-view.component.scss'],
     animations: [
