@@ -47,11 +47,9 @@ export class MapViewComponent implements OnInit, OnDestroy {
 
     public async ngOnInit(): Promise<void> {
         try {
-            const basemap = await this.mapService.createBasemapFromId(
-                'streets'
-            );
             const map = await this.mapService.createMap({
-                basemap: basemap.val
+                basemap: 'satellite',
+                ground: 'world-elevation'
             });
             const wrapper = await this.mapService.createMapView({
                 container: this.mapElement.nativeElement,

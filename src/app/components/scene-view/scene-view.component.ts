@@ -46,17 +46,16 @@ export class SceneViewComponent implements OnInit, OnDestroy {
 
     public async ngOnInit() {
         try {
-            const basemap = await this.mapService.createBasemapFromId(
-                'streets'
-            );
             const map = await this.mapService.createMap({
-                basemap: basemap.val
+                basemap: 'satellite',
+                ground: 'world-elevation'
             });
             const wrapper = await this.mapService.createSceneView({
                 container: this.mapElement.nativeElement,
                 map,
                 zoom: 7,
-                center: { longitude: 113.2, latitude: 23.4 }
+                center: { longitude: 113.2, latitude: 23.4 },
+                viewingMode: 'local'
             });
             this.sceneView = wrapper.val;
             const arr = await this.http.get<any[]>(
