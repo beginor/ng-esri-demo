@@ -1,3 +1,9 @@
+@import '../node_modules/bootstrap/scss/_functions';
+@import '../node_modules/bootstrap/scss/_variables';
+@import '../node_modules/bootstrap/scss/_mixins';
+
+$enable-shadows: true;
+
 @mixin full-width-height() {
   width: 100%;
   height: 100%;

@@ -4,16 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 import { HomeComponent } from './components/home/home.component';
-import { MapViewComponent } from './components/map-view/map-view.component';
-import {
-    SceneViewComponent
-} from './components/scene-view/scene-view.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes = [
-    {
-        path: 'home',
-        component: HomeComponent
-    },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'about', component: AboutComponent },
     {
         path: 'map-view',
         component: MapViewComponent,
@@ -26,8 +22,7 @@ const routes = [
         canActivate: [
             EsriLoaderGuard
         ]
-    },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+    }
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { EsriMapService } from 'ng-esri-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
 import {
     SceneViewComponent
@@ -22,6 +23,7 @@ import { EsriLoaderGuard } from './services/esri-loader-guard';
     declarations: [
         AppComponent,
         HomeComponent,
+        AboutComponent,
         MapViewComponent,
         SceneViewComponent
     ],

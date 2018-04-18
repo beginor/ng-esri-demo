@@ -1,31 +1,22 @@
-import {
-    animate, state, style, transition, trigger
-} from '@angular/animations';
+import { trigger, transition, useAnimation } from '@angular/animations';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { fadeIn } from '../../animations';
 
 @Component({
     moduleId: module.id,
-    selector: 'home',
+    selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     animations: [
-        trigger('state', [
-            transition(':enter', [
-                style({
-                    opacity: 0
-                }),
-                animate(300)
-            ]),
-            transition(':leave', [
-                animate(300),
-                style({
-                    opacity: 0
-                })
-            ])
-        ])
-    ]
+        trigger('fadeIn', [transition(':enter', useAnimation(fadeIn))])
+    ],
+    host: { '[@fadeIn]': '' }
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent {
+
+    public message = 'Hello, Angular !';
+    public count = 0;
 
     public state: any;
 
