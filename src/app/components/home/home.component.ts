@@ -13,7 +13,7 @@ import { fadeIn } from '../../animations';
     ],
     host: { '[@fadeIn]': '' }
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
 
     public message = 'Hello, Angular !';
     public count = 0;

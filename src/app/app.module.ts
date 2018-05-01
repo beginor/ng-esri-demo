@@ -7,8 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { EsriMapService } from 'ng-esri-service';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -40,7 +38,6 @@ import { EsriLoaderGuard } from './services/esri-loader-guard';
     ],
     bootstrap: [AppComponent],
     providers: [
-        EsriMapService,
         EsriLoaderGuard
     ]
 })

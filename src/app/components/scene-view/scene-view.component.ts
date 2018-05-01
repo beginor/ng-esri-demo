@@ -1,12 +1,14 @@
 import {
-    animate, state, style, transition, trigger
+    transition, trigger, useAnimation
 } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
 import {
     Component, ElementRef, OnDestroy, OnInit, ViewChild
 } from '@angular/core';
 
-import { EsriMapService } from 'ng-esri-service';
-import { HttpClient } from '@angular/common/http';
+import * as esri from 'esri-service';
+
+import { fadeIn, fadeOut } from '../../animations';
 
 @Component({
     moduleId: module.id,
@@ -15,20 +17,12 @@ import { HttpClient } from '@angular/common/http';
     styleUrls: ['./scene-view.component.scss'],
     animations: [
         trigger('state', [
-            transition(':enter', [
-                style({
-                    opacity: 0
-                }),
-                animate(300)
-            ]),
-            transition(':leave', [
-                animate(300),
-                style({
-                    opacity: 0
-                })
-            ])
+            transition(':enter', useAnimation(fadeIn))
         ])
-    ]
+    ],
+    host: {
+        '[@state]': ''
+    }
 })
 export class SceneViewComponent implements OnInit, OnDestroy {
 
@@ -39,36 +33,35 @@ export class SceneViewComponent implements OnInit, OnDestroy {
     private sceneView: __esri.SceneView;
 
     constructor(
-        private mapService: EsriMapService,
         private http: HttpClient
     ) {
     }
 
     public async ngOnInit() {
         try {
-            const map = await this.mapService.createMap({
+            const map = await esri.createMap({
                 basemap: 'satellite',
                 ground: 'world-elevation'
             });
-            const wrapper = await this.mapService.createSceneView({
+            const wrapper = await esri.createSceneView({
                 container: this.mapElement.nativeElement,
                 map,
                 zoom: 7,
                 center: { longitude: 113.2, latitude: 23.4 },
                 viewingMode: 'local'
             });
-            this.sceneView = wrapper.val;
+            this.sceneView = wrapper;
 
-            await wrapper.val.when();
+            await wrapper.when();
 
             const arr = await this.http.get<any[]>(
                 './assets/base-map.config.json'
             ).toPromise();
 
-            const localSource = await this.mapService.createLocalSource(
+            const localSource = await esri.createLocalSource(
                 arr
             );
-            const gallery = await this.mapService.createBasemapsGallery(
+            const gallery = await esri.createBasemapsGallery(
                 {
                     view: this.sceneView,
                     source: localSource
