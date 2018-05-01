@@ -59,6 +59,8 @@ export class MapViewComponent implements OnInit, OnDestroy {
             });
             this.mapView = wrapper.val;
 
+            await wrapper.val.when();
+
             const arr = await this.http.get<any[]>(
                 './assets/base-map.config.json'
             ).toPromise();

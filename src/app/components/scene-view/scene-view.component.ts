@@ -58,6 +58,9 @@ export class SceneViewComponent implements OnInit, OnDestroy {
                 viewingMode: 'local'
             });
             this.sceneView = wrapper.val;
+
+            await wrapper.val.when();
+
             const arr = await this.http.get<any[]>(
                 './assets/base-map.config.json'
             ).toPromise();
