@@ -29,7 +29,7 @@ describe('AppComponent', () => {
 
     it(`should has a navbar-brand 'Angular Demo'`, async(() => {
         expect(targetEl.querySelector('a.navbar-brand').textContent)
-            .toEqual('Angular Demo');
+            .toContain('Angular Demo');
     }));
 
 });
