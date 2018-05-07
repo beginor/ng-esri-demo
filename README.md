@@ -1,6 +1,6 @@
 # Angular Seed App
 
-Seed project build with [Angular](https://angular.io/), [Font Awesome](http://fontawesome.io/) and [ng-bootstrap](https://ng-bootstrap.github.io/) .
+Seed project build with [Angular](https://angular.io/), [Font Awesome](https://fontawesome.com/) and [ng-bootstrap](https://ng-bootstrap.github.io/) .
 
 ## Tech stack
 
@@ -30,10 +30,10 @@ Seed project build with [Angular](https://angular.io/), [Font Awesome](http://fo
      npm start
      ```
 
-  4. Create an aot build
+  4. Create a build
 
      ```shell
-     npm run build-aot
+     npm run build
      ```
 
   5. Happy coding!.
