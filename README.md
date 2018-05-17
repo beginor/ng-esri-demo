@@ -34,10 +34,10 @@ Angular and ArcGIS API for JavaScript 4.x Demo Project
      npm start
      ```
 
-  4. Create an aot build
+  4. Create a build
 
      ```shell
-     npm run build-aot
+     npm run build
      ```
 
   5. Happy coding!.

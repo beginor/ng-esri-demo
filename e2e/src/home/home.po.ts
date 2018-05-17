@@ -7,11 +7,11 @@ export class HomePage {
     }
 
     public getHelloButtonText() {
-        return element(by.css('home button.btn')).getText();
+        return element(by.css('app-home button.btn')).getText();
     }
 
     public clickHelloButton() {
-        element(by.css('home button.btn')).click();
+        element(by.css('app-home button.btn')).click();
     }
 
 }
