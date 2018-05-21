@@ -45,30 +45,32 @@ export class MapViewComponent implements OnInit, OnDestroy {
                 basemap: 'satellite',
                 ground: 'world-elevation'
             });
-            const view = await esri.createMapView({
+            const mapView = await esri.createMapView({
                 container: this.mapElement.nativeElement,
                 map,
                 zoom: 7,
                 center: { longitude: 113.2, latitude: 23.4 }
             });
-            this.mapView = view;
+            this.mapView = mapView;
 
-            await view.when();
+            await mapView.when();
 
-            const arr = await this.http.get<any[]>(
+            const basemapProps = await this.http.get<any[]>(
                 './assets/base-map.config.json'
             ).toPromise();
 
             const localSource = await esri.createLocalSource(
-                arr
+                basemapProps
             );
             const gallery = await esri.createBasemapsGallery(
                 {
                     view: this.mapView,
                     source: localSource
-                }, {
+                },
+                {
                     expandTooltip: '底图'
-                });
+                }
+            );
             this.mapView.ui.add(gallery, 'top-left');
         }
         // tslint:disable-next-line:one-line

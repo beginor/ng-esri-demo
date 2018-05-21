@@ -43,31 +43,33 @@ export class SceneViewComponent implements OnInit, OnDestroy {
                 basemap: 'satellite',
                 ground: 'world-elevation'
             });
-            const wrapper = await esri.createSceneView({
+            const sceneView = await esri.createSceneView({
                 container: this.mapElement.nativeElement,
                 map,
                 zoom: 7,
                 center: { longitude: 113.2, latitude: 23.4 },
                 viewingMode: 'local'
             });
-            this.sceneView = wrapper;
+            this.sceneView = sceneView;
 
-            await wrapper.when();
+            await sceneView.when();
 
-            const arr = await this.http.get<any[]>(
+            const basemapProps = await this.http.get<any[]>(
                 './assets/base-map.config.json'
             ).toPromise();
 
             const localSource = await esri.createLocalSource(
-                arr
+                basemapProps
             );
             const gallery = await esri.createBasemapsGallery(
                 {
                     view: this.sceneView,
                     source: localSource
-                }, {
+                },
+                {
                     expandTooltip: '底图'
-                });
+                }
+            );
             this.sceneView.ui.add(gallery, 'top-left');
         }
         catch (ex) {
