@@ -14,7 +14,6 @@
   "editor.rulers": [79, 120],
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": false,
-  "extensions.autoUpdate": false,
   "files.autoSave": "off",
   "files.insertFinalNewline": true,
   "git.enabled": true,
