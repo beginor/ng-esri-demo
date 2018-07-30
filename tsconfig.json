@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-animations": [
+        "dist/ng-animations"
+      ],
+      "ng-animations/*": [
+        "dist/ng-animations/*"
+      ]
+    }
   }
 }

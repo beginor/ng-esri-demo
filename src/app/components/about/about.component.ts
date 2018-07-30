@@ -16,7 +16,7 @@ import {
     slideOutRight, slideOutUp, hinge, jackInTheBox, rollIn, rollOut, zoomIn,
     zoomInDown, zoomInLeft, zoomInRight, zoomInUp, zoomOut, zoomOutDown,
     zoomOutLeft, zoomOutRight, zoomOutUp
-} from '../../animations';
+} from 'ng-animations';
 
 @Component({
     selector: 'app-about',
