@@ -170,6 +170,46 @@
           }
         }
       }
+    },
+    "esri-service": {
+      "root": "projects/esri-service",
+      "sourceRoot": "projects/esri-service/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/esri-service/tsconfig.lib.json",
+            "project": "projects/esri-service/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/esri-service/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/esri-service/src/test.ts",
+            "tsConfig": "projects/esri-service/tsconfig.spec.json",
+            "karmaConfig": "projects/esri-service/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/esri-service/tsconfig.lib.json",
+              "projects/esri-service/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-esri-demo"

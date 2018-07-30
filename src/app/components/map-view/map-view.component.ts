@@ -8,7 +8,7 @@ import {
 
 import * as esri from 'esri-service';
 
-import { fadeIn } from '../../animations';
+import { fadeIn } from 'ng-animations';
 
 @Component({
     moduleId: module.id,

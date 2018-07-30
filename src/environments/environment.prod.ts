@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    arcgisJsApi: 'https://js.arcgis.com/4.7',
+    arcgisJsApi: 'https://js.arcgis.com/4.8',
     corsEnabledHosts: [
         { host: 'map.geoq.cn', withCredentials: true },
         { host: 'map.geoq.cn:443', withCredentials: true },
