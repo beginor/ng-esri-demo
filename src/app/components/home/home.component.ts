@@ -1,7 +1,7 @@
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { Component, OnInit, HostBinding } from '@angular/core';
 
-import { fadeIn } from '../../animations';
+import { fadeIn } from 'ng-animations';
 
 @Component({
     moduleId: module.id,
