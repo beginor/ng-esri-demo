@@ -191,14 +191,14 @@ export function queryLayerGraphics(
     view: __esri.SceneView,
     layer: __esri.FeatureLayer,
     where: string
-): Promise<__esri.Graphic[]> {
-    return new Promise<__esri.Graphic[]>((resolve, reject) => {
+): Promise<__esri.FeatureSet> {
+    return new Promise<__esri.FeatureSet>((resolve, reject) => {
         view.whenLayerView(layer)
             .then((layerView: __esri.FeatureLayerView) => {
                 if (where === layer.definitionExpression) {
                     layerView.queryFeatures()
-                        .then((graphics: __esri.Graphic[]) => {
-                            resolve(graphics);
+                        .then((featureSet: __esri.FeatureSet) => {
+                            resolve(featureSet);
                         })
                         .catch(err => {
                             reject(err);
@@ -208,9 +208,9 @@ export function queryLayerGraphics(
                     const handle = layerView.watch('updating', val => {
                         if (!val) {
                             layerView.queryFeatures()
-                                .then((graphics: __esri.Graphic[]) => {
+                                .then((featureSet: __esri.FeatureSet) => {
                                     handle.remove();
-                                    resolve(graphics);
+                                    resolve(featureSet);
                                 })
                                 .catch(err => {
                                     handle.remove();
@@ -351,13 +351,13 @@ export function getViewResolution(view: __esri.SceneView): number {
     return resoluation;
 }
 
-export async function createAction(
-    actionProperties: __esri.ActionProperties
-): Promise<__esri.Action> {
-    const [Action] = await loadModules([
-        'esri/support/Action'
+export async function createActionButton(
+    actionProperties: any
+): Promise<__esri.ActionButton> {
+    const [ActionButton] = await loadModules([
+        'esri/support/actions/ActionButton'
     ]);
-    return new Action(actionProperties);
+    return new ActionButton(actionProperties);
 }
 
 export async function createField(
