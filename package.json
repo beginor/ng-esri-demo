@@ -43,7 +43,7 @@
     "zone.js": "^0.8.26",
     "bootstrap": "^4.1.0",
     "@ng-bootstrap/ng-bootstrap": "^2.2.0",
-    "@fortawesome/fontawesome-free-webfonts": "^1.0.0"
+    "@fortawesome/fontawesome-free": "^5.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
