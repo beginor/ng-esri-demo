@@ -1,6 +1,5 @@
 import { trigger, transition, useAnimation } from '@angular/animations';
-import { Component, OnInit, HostBinding } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { fadeIn } from 'ng-animations';
 
 @Component({
@@ -9,18 +8,18 @@ import { fadeIn } from 'ng-animations';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     animations: [
-        trigger('fadeIn', [transition(':enter', useAnimation(fadeIn))])
+        trigger('animation', [transition(':enter', useAnimation(fadeIn))])
     ],
-    host: { '[@fadeIn]': '' }
+    host: { '[@animation]': '' }
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
     public message = 'Hello, Angular !';
     public count = 0;
 
-    public state: any;
+    public ngOnInit(): void { }
 
-    public onClick() {
+    public onClick(): void {
         this.message = `You have clicked ${++this.count} times!`;
     }
 
