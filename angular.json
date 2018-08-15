@@ -28,10 +28,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -82,10 +79,7 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
-              "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -124,86 +118,6 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ng-animations": {
-      "root": "projects/ng-animations",
-      "sourceRoot": "projects/ng-animations/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ng-animations/tsconfig.lib.json",
-            "project": "projects/ng-animations/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/ng-animations/ng-package.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-animations/src/test.ts",
-            "tsConfig": "projects/ng-animations/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-animations/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ng-animations/tsconfig.lib.json",
-              "projects/ng-animations/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "esri-service": {
-      "root": "projects/esri-service",
-      "sourceRoot": "projects/esri-service/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/esri-service/tsconfig.lib.json",
-            "project": "projects/esri-service/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/esri-service/ng-package.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/esri-service/src/test.ts",
-            "tsConfig": "projects/esri-service/tsconfig.spec.json",
-            "karmaConfig": "projects/esri-service/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/esri-service/tsconfig.lib.json",
-              "projects/esri-service/tsconfig.spec.json"
-            ],
             "exclude": [
               "**/node_modules/**"
             ]
