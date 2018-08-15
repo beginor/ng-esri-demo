@@ -8,6 +8,7 @@ import { MapViewComponent } from './components/map-view/map-view.component';
 import {
     SceneViewComponent
 } from './components/scene-view/scene-view.component';
+import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
