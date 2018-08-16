@@ -26,7 +26,7 @@ import { AboutComponent } from './components/about/about.component';
         ReactiveFormsModule,
         HttpClientModule,
         HttpClientJsonpModule,
-        NgbModule.forRoot(),
+        NgbModule,
         AppRoutingModule
     ],
     bootstrap: [AppComponent]
