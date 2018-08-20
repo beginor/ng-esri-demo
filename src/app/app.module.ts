@@ -33,7 +33,7 @@ import { EsriLoaderGuard } from './services/esri-loader-guard';
         ReactiveFormsModule,
         HttpClientModule,
         HttpClientJsonpModule,
-        NgbModule.forRoot(),
+        NgbModule,
         AppRoutingModule
     ],
     bootstrap: [AppComponent],
