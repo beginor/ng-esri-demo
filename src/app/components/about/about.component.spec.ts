@@ -5,8 +5,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AboutComponent } from './about.component';
 
 describe('AboutComponent', () => {
-    let component: AboutComponent;
+
+    let target: AboutComponent;
     let fixture: ComponentFixture<AboutComponent>;
+    let targetEl: HTMLElement;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -15,17 +17,24 @@ describe('AboutComponent', () => {
                 NoopAnimationsModule,
                 RouterTestingModule
             ]
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
 
     beforeEach(() => {
         fixture = TestBed.createComponent(AboutComponent);
-        component = fixture.componentInstance;
+        target = fixture.componentInstance;
+        targetEl = fixture.debugElement.nativeElement;
         fixture.detectChanges();
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(target).toBeTruthy();
+    });
+
+    // should display a header
+    it('should display header with "Angular App Seed"', () => {
+        const h1 = targetEl.querySelector('h1');
+        expect(h1).toBeTruthy();
+        expect(h1.textContent).toContain('Angular App Seed');
     });
 });
