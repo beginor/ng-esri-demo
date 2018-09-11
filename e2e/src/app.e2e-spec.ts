@@ -10,7 +10,7 @@ describe('ng-seed App', () => {
 
     it('should display Navbar Brand', () => {
         page.navigateTo();
-        expect(page.getNavbarBrand()).toEqual('Angular Demo');
+        expect(page.getNavbarBrand()).toContain('Angular App Seed');
     });
 
 });
