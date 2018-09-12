@@ -3,7 +3,7 @@ import { browser, by, element } from 'protractor';
 export class HomePage {
 
     public navigateTo() {
-        return browser.get('/index.html#/home');
+        return browser.get('/home');
     }
 
     public getHelloButtonText() {

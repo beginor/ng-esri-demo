@@ -12,7 +12,7 @@
     "test": "ng test --watch",
     "test-coverage": "ng test --code-coverage",
     "e2e": "ng e2e --webdriver-update false",
-    "webdriver-update": "webdriver-manager update --proxy http://127.0.0.1:10087"
+    "webdriver-update": "webdriver-manager update --proxy http://127.0.0.1:10080"
   },
   "repository": {
     "type": "git",
@@ -43,8 +43,8 @@
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26",
     "bootstrap": "^4.1.0",
-    "@ng-bootstrap/ng-bootstrap": "^3.0.0",
-    "@fortawesome/fontawesome-free": "^5.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^3.2.0",
+    "@fortawesome/fontawesome-free": "^5.3.0",
     "ng-animations": "^1.0.0",
     "esri-loader": "^2.4.0",
     "esri-service": "^1.1.1"

@@ -24,6 +24,7 @@ describe('HomeComponent', () => {
         fixture = TestBed.createComponent(HomeComponent);
         target = fixture.componentInstance;
         targetEl = fixture.debugElement.nativeElement;
+        fixture.detectChanges();
     }));
 
     it('should create HomeComponent', async(() => {
