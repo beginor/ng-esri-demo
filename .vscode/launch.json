@@ -10,6 +10,9 @@
       "osx": {
         "runtimeExecutable": "/Applications/Chromium.app/Contents/MacOS/Chromium"
       },
+      "runtimeArgs": [
+        "--incognito"
+      ],
       "disableNetworkCache": true
     }
   ]
