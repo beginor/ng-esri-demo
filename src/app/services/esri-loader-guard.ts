@@ -20,9 +20,9 @@ export class EsriLoaderGuard implements CanActivate {
             await loadScript(options);
             // add cors enabled hosts
             const [config] = await loadModules(['esri/config']);
-            this.getCorsEnabledHosts().forEach(host => {
-                config.request.corsEnabledServers.push(host);
-            });
+            for (const server of environment.trustedServers) {
+                config.request.trustedServers.push(server);
+            }
             return true;
         }
         catch (ex) {
@@ -37,10 +37,6 @@ export class EsriLoaderGuard implements CanActivate {
             css: `${environment.arcgisJsApi}/esri/css/main.css`,
             dojoConfig: environment.dojoConfig
         };
-    }
-
-    private getCorsEnabledHosts(): any[] {
-        return environment.corsEnabledHosts;
     }
 
 }
