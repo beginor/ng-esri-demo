@@ -42,9 +42,8 @@
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26",
     "bootstrap": "^4.1.0",
-    "@ng-bootstrap/ng-bootstrap": "^3.3.0",
-    "@fortawesome/fontawesome-free": "^5.4.0",
-    "ng-animations": "^1.0.0"
+    "@ng-bootstrap/ng-bootstrap": "^4.0.0",
+    "@fortawesome/fontawesome-free": "^5.4.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
