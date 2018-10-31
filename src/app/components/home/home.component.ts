@@ -1,16 +1,11 @@
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { fadeIn } from 'ng-animations';
 
 @Component({
     moduleId: module.id,
     selector: 'app-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    animations: [
-        trigger('animation', [transition(':enter', useAnimation(fadeIn))])
-    ],
-    host: { '[@animation]': '' }
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
