@@ -7,45 +7,24 @@
       "label": "npm:start",
       "command": "npm",
       "type": "shell",
-      "args": [
-        "run",
-        "start"
-      ],
-      "problemMatcher": [
-        "$tsc",
-        "$node-sass"
-      ]
+      "args": ["run", "start"],
+      "problemMatcher": ["$tsc", "$node-sass"]
     },
     {
       "label": "npm:build",
       "command": "npm",
       "type": "shell",
-      "args": [
-        "run",
-        "build"
-      ],
-      "problemMatcher": [
-        "$tsc",
-        "$node-sass"
-      ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
+      "args": ["run", "build"],
+      "problemMatcher": ["$tsc", "$node-sass"],
+      "group": { "kind": "build", "isDefault": true }
     },
     {
       "label": "npm:test-coverage",
       "command": "npm",
       "type": "shell",
-      "args": [
-        "run",
-        "test-coverage"
-      ],
+      "args": ["run", "test-coverage"],
       "problemMatcher": [],
-      "group": {
-        "kind": "test",
-        "isDefault": true
-      }
+      "group": { "kind": "test", "isDefault": true }
     }
   ]
 }
