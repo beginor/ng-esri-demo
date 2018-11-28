@@ -9,6 +9,14 @@
     .navbar-brand {
       text-shadow: 0 0 1px $light;
     }
+
+    .navbar-nav {
+
+      .nav-item.active {
+        border-bottom: .25rem solid $navbar-dark-active-color;
+        margin-bottom: -0.5rem;
+      }
+    }
   }
 
   .app-main {
