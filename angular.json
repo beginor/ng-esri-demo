@@ -63,6 +63,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "hmr": true,
             "browserTarget": "ng-seed:build"
           },
           "configurations": {
