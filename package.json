@@ -18,11 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/beginor/ng-seed.git"
   },
-  "keywords": [
-    "angular",
-    "seed",
-    "angular-cli"
-  ],
+  "keywords": ["angular", "seed", "angular-cli"],
   "author": "beginor",
   "license": "MIT",
   "bugs": {
