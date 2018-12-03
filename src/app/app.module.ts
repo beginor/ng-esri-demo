@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AppCommonModule } from './common/app-common.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -23,6 +24,7 @@ import { AppComponent } from './app.component';
         HttpClientModule,
         HttpClientJsonpModule,
         NgbModule,
+        AppCommonModule,
         AppRoutingModule
     ],
     bootstrap: [AppComponent]
