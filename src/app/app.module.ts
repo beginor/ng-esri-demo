@@ -10,18 +10,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppCommonModule } from './common/app-common.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MapViewComponent } from './components/map-view/map-view.component';
-import {
-    SceneViewComponent
-} from './components/scene-view/scene-view.component';
 import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 
 @NgModule({
     declarations: [
-        AppComponent,
-        MapViewComponent,
-        SceneViewComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,

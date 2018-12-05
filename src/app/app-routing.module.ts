@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { environment } from '../environments/environment';
-import { MapViewComponent } from './components/map-view/map-view.component';
-import {
-    SceneViewComponent
-} from './components/scene-view/scene-view.component';
 import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 const routes: Routes = [
@@ -13,17 +9,9 @@ const routes: Routes = [
     { path: 'home', loadChildren: './home/home.module#HomeModule' },
     { path: 'about', loadChildren: './about/about.module#AboutModule' },
     {
-        path: 'map-view',
-        component: MapViewComponent,
-        canActivate: [
-            EsriLoaderGuard
-        ]
-    },
-    {
-        path: 'scene-view', component: SceneViewComponent,
-        canActivate: [
-            EsriLoaderGuard
-        ]
+        path: 'arcgis',
+        loadChildren: './arcgis/arcgis.module#ArcgisModule',
+        canLoad: [EsriLoaderGuard]
     }
 ];
 

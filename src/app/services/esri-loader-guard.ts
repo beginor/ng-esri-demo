@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
-import {
-    ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot
-} from '@angular/router';
+import { CanLoad, Route, UrlSegment } from '@angular/router';
 
-import { ILoadScriptOptions, loadModules, loadScript } from 'esri-loader';
+import {
+    ILoadScriptOptions,
+    loadModules,
+    loadScript,
+    isLoaded
+} from 'esri-loader';
 
 import { environment } from '../../environments/environment';
 
 @Injectable()
-export class EsriLoaderGuard implements CanActivate {
+export class EsriLoaderGuard implements CanLoad {
 
-    public async canActivate(
-        route: ActivatedRouteSnapshot,
-        state: RouterStateSnapshot
+    public async canLoad(
+        route: Route,
+        segments: UrlSegment[]
     ): Promise<boolean> {
+        if (isLoaded()) {
+            return true;
+        }
         try {
             const options = this.getOptions();
             // load esri script and dojoConfig;

@@ -1,12 +1,3 @@
-<div class="container-fluid">
-  <div class="row justify-content-center mx-sm-2 mx-md-0">
-    <div class="col-md-4">
-      <a class="btn btn-outline-success btn-lg btn-block" routerLink="/map-view">
-        <i class="esri-icon-maps"></i> Map View
-      </a>
-      <a class="btn btn-outline-success btn-lg btn-block" routerLink="/scene-view">
-        <i class="esri-icon-globe"></i> Scene View
-      </a>
-    </div>
-  </div>
+<div class="container p-5">
+  <button class="btn btn-lg btn-block btn-outline-primary" (click)="onClick()">{{vm.message}}</button>
 </div>

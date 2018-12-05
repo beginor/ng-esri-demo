@@ -18,7 +18,12 @@
     "type": "git",
     "url": "git+https://github.com/beginor/ng-esri-demo.git"
   },
-  "keywords": ["angular", "arcgis js api", "seed", "angular-cli"],
+  "keywords": [
+    "angular",
+    "arcgis js api",
+    "seed",
+    "angular-cli"
+  ],
   "author": "beginor",
   "license": "MIT",
   "bugs": {
@@ -41,9 +46,9 @@
     "bootstrap": "^4.1.0",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@fortawesome/fontawesome-free": "^5.5.0",
-    "ng-animations": "^1.0.0",
+    "ng-animations": "^2.0.0",
     "esri-loader": "^2.5.0",
-    "esri-service": "^1.1.1"
+    "esri-service": "^1.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.11.0",
