@@ -2,10 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "module": "es2015",
-    "types": [
-      "arcgis-js-api"
-    ]
+    "types": ["arcgis-js-api"]
   },
   "exclude": [
     "test.ts",
