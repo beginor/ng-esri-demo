@@ -1,4 +1,5 @@
 export const environment = {
+    hmr: false,
     production: true,
     arcgisJsApi: 'https://js.arcgis.com/4.8',
     trustedServers: [
