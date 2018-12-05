@@ -1,9 +1,9 @@
 version: "3"
 services:
   app:
-    image: beginor/ng-seed
-    container_name: ng-seed
-    hostname: ng-seed
+    image: beginor/ng-esri-demo
+    container_name: ng-esri-demo
+    hostname: ng-esri-demo
     ports:
       - 1811:80
     # volumes:
