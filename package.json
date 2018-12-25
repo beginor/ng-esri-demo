@@ -47,7 +47,7 @@
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@fortawesome/fontawesome-free": "^5.5.0",
     "ng-animations": "^2.0.0",
-    "esri-loader": "^2.5.0",
+    "esri-loader": "^2.6.0",
     "esri-service": "^1.2.0"
   },
   "devDependencies": {
@@ -71,6 +71,6 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6",
-    "@types/arcgis-js-api": "^4.9.0"
+    "@types/arcgis-js-api": "^4.10.0"
   }
 }
