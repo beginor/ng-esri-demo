@@ -1,6 +1,5 @@
-import { trigger, transition, useAnimation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../services/home.service';
+import { HomeService } from './home.service';
 
 @Component({
     moduleId: module.id,
