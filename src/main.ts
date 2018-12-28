@@ -1,8 +1,7 @@
-import { enableProdMode, NgModuleRef, ApplicationRef } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import { createNewHosts } from '@angularclass/hmr';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
@@ -13,32 +12,10 @@ if (environment.production) {
 
 registerLocaleData(zh);
 
-const browserBootstrap = () => platformBrowserDynamic().bootstrapModule(
-    AppModule
-);
-const hmrBootstrap = (
-    module: any,
-    bootstrap: () => Promise<NgModuleRef<any>>
-) => {
-    let ngModule: NgModuleRef<any>;
-    module.hot.accept();
-    bootstrap().then(mod => ngModule = mod);
-    module.hot.dispose(() => {
-        const appRef: ApplicationRef = ngModule.injector.get(ApplicationRef);
-        const elements = appRef.components.map(c => c.location.nativeElement);
-        const makeVisible = createNewHosts(elements);
-        ngModule.destroy();
-        makeVisible();
+platformBrowserDynamic().bootstrapModule(AppModule)
+    .then(() => {
+        // console.log('app bootstrap');
+    })
+    .catch(err => {
+        console.error(err);
     });
-};
-
-if (environment.hmr) {
-    if (module['hot']) {
-        hmrBootstrap(module, browserBootstrap);
-    } else {
-        console.error('HMR is not enabled for webpack-dev-server!');
-        console.log('Are you using the --hmr flag for ng serve?');
-    }
-} else {
-    browserBootstrap().catch(err => console.log(err));
-}

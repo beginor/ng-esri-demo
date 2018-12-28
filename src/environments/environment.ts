@@ -3,7 +3,6 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-    hmr: false,
     production: false,
     arcgisJsApi: 'https://js.arcgis.com/4.10',
     trustedServers: [
