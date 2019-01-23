@@ -3,6 +3,8 @@
 @import '../node_modules/bootstrap/scss/mixins';
 
 $enable-shadows: true;
+$enable-rounded: true;
+$enable-caret: false;
 
 @mixin full-width-height() {
   width: 100%;
