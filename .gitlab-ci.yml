@@ -1,11 +1,18 @@
+before_script:
+  - npm ci
+
 stages:
   - build
   - test
   - deploy
 
+# Cache node_modules between jobs
+cache:
+  paths:
+    - node_modules/
+
 Build in CI:
   stage: build
   script:
-    - npm ci
     - npm run lint
     - npm run build
