@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     public ngOnInit(): void { }
 
     public onClick(): void {
-        this.vm.addCount();
+        this.vm.updateMessage();
     }
 
 }
