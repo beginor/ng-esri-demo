@@ -1,11 +1,32 @@
 stages:
+  - setup
   - build
   - test
   - deploy
 
-Build in CI:
-  stage: build
+# Cache node_modules between jobs
+cache:
+  untracked: true
+  paths:
+    - node_modules/
+
+setup:
+  stage: setup
   script:
     - npm ci
+
+build:
+  stage: build
+  script:
     - npm run lint
     - npm run build
+
+test:
+  stage: test
+  script:
+    - echo "test pass"
+
+deploy:
+  stage: deploy
+  script:
+    - echo "deploy pass"
