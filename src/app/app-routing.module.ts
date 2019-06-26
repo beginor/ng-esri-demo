@@ -6,11 +6,19 @@ import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', loadChildren: './home/home.module#HomeModule' },
-    { path: 'about', loadChildren: './about/about.module#AboutModule' },
+    {
+        path: 'home',
+        // tslint:disable-next-line: max-line-length
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    },
+    {
+        path: 'about',
+        // tslint:disable-next-line: max-line-length
+        loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+    },
     {
         path: 'arcgis',
-        loadChildren: './arcgis/arcgis.module#ArcgisModule',
+        loadChildren: () => import('./arcgis/arcgis.module').then(m => m.ArcgisModule),
         canLoad: [EsriLoaderGuard]
     }
 ];
