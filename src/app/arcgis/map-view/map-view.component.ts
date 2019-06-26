@@ -8,29 +8,16 @@ import {
 
 import * as esri from 'esri-service';
 
-import { fadeIn } from 'ng-animations';
-
 @Component({
-    moduleId: module.id,
     selector: 'app-map-view',
     templateUrl: './map-view.component.html',
-    styleUrls: ['./map-view.component.scss'],
-    animations: [
-        trigger('state', [
-            transition(':enter', [
-                useAnimation(fadeIn)
-            ])
-        ])
-    ],
-    host: {
-        '[@state]': ''
-    }
+    styleUrls: ['./map-view.component.scss']
 })
 export class MapViewComponent implements OnInit, OnDestroy {
 
     public state: any;
 
-    @ViewChild('mapElement') public mapElement: ElementRef;
+    @ViewChild('mapElement', { static: true }) public mapElement: ElementRef;
 
     private mapView: __esri.MapView;
 

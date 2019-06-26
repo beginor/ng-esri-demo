@@ -8,27 +8,16 @@ import {
 
 import * as esri from 'esri-service';
 
-import { fadeIn, fadeOut } from 'ng-animations';
-
 @Component({
-    moduleId: module.id,
     selector: 'app-scene-view',
     templateUrl: './scene-view.component.html',
-    styleUrls: ['./scene-view.component.scss'],
-    animations: [
-        trigger('state', [
-            transition(':enter', useAnimation(fadeIn))
-        ])
-    ],
-    host: {
-        '[@state]': ''
-    }
+    styleUrls: ['./scene-view.component.scss']
 })
 export class SceneViewComponent implements OnInit, OnDestroy {
 
     public state: any;
 
-    @ViewChild('mapElement') public mapElement: ElementRef;
+    @ViewChild('mapElement', { static: true }) public mapElement: ElementRef;
 
     private sceneView: __esri.SceneView;
 
