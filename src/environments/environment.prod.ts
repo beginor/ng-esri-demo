@@ -8,6 +8,9 @@ export const environment = {
     ],
     dojoConfig: {
         locale: 'zh-cn',
-        async: true
+        async: true,
+        has: {
+            "esri-native-promise": true
+        }
     }
 };

@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    arcgisJsApi: 'https://js.arcgis.com/4.11',
+    arcgisJsApi: 'https://js.arcgis.com/4.12',
     trustedServers: [
         'http://map.geoq.cn',
         'https://map.geoq.cn',
@@ -12,7 +12,10 @@ export const environment = {
     ],
     dojoConfig: {
         locale: 'zh-cn',
-        async: true
+        async: true,
+        has: {
+            "esri-native-promise": true
+        }
     }
 };
 
