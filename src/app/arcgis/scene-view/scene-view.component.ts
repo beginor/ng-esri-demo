@@ -40,26 +40,7 @@ export class SceneViewComponent implements OnInit, OnDestroy {
                 viewingMode: 'local'
             });
             this.sceneView = sceneView;
-
             await sceneView.when();
-
-            const basemapProps = await this.http.get<any[]>(
-                './assets/base-map.config.json'
-            ).toPromise();
-
-            const localSource = await esri.createLocalSource(
-                basemapProps
-            );
-            const gallery = await esri.createBasemapsGallery(
-                {
-                    view: this.sceneView,
-                    source: localSource
-                },
-                {
-                    expandTooltip: '底图'
-                }
-            );
-            this.sceneView.ui.add(gallery, 'top-left');
         }
         catch (ex) {
             console.error(ex);
