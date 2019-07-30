@@ -29,8 +29,7 @@ export class MapViewComponent implements OnInit, OnDestroy {
     public async ngOnInit(): Promise<void> {
         try {
             const map = await esri.createMap({
-                basemap: 'satellite',
-                ground: 'world-elevation'
+                basemap: 'satellite'
             });
             const mapView = await esri.createMapView({
                 container: this.mapElement.nativeElement,
@@ -39,26 +38,7 @@ export class MapViewComponent implements OnInit, OnDestroy {
                 center: { longitude: 113.2, latitude: 23.4 }
             });
             this.mapView = mapView;
-
             await mapView.when();
-
-            const basemapProps = await this.http.get<any[]>(
-                './assets/base-map.config.json'
-            ).toPromise();
-
-            const localSource = await esri.createLocalSource(
-                basemapProps
-            );
-            const gallery = await esri.createBasemapsGallery(
-                {
-                    view: this.mapView,
-                    source: localSource
-                },
-                {
-                    expandTooltip: '底图'
-                }
-            );
-            this.mapView.ui.add(gallery, 'top-left');
         }
         // tslint:disable-next-line:one-line
         catch (ex) {
