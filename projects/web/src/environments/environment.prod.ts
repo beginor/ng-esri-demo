@@ -6,10 +6,10 @@ export const environment = {
         'www.arcgisonline.cn'
     ],
     dojoConfig: {
-        locale: 'zh-cn',
-        async: true,
         has: {
             'esri-native-promise': true
-        }
+        },
+        locale: 'zh-cn',
+        async: true
     }
 };
