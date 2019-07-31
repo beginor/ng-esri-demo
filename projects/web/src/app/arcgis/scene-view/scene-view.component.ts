@@ -26,7 +26,7 @@ export class SceneViewComponent implements OnInit, OnDestroy {
     ) {
     }
 
-    public async ngOnInit() {
+    public async ngOnInit(): Promise<void> {
         try {
             const map = await esri.createMap({
                 basemap: 'satellite',
@@ -47,7 +47,9 @@ export class SceneViewComponent implements OnInit, OnDestroy {
         }
     }
 
-    public ngOnDestroy() {
-        // this.sceneView.destroy();
+    public ngOnDestroy(): void {
+        if (!!this.sceneView) {
+            this.sceneView.destroy();
+        }
     }
 }

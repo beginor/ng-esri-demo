@@ -18,6 +18,7 @@ const routes: Routes = [
     },
     {
         path: 'arcgis',
+        // tslint:disable-next-line: max-line-length
         loadChildren: () => import('./arcgis/arcgis.module').then(m => m.ArcgisModule),
         canLoad: [EsriLoaderGuard]
     }
