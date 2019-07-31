@@ -1,0 +1,5 @@
+{
+  "extends": "../tslint.json",
+  "max-line-length": [ true, 80 ],
+  "typedef": [ true, "call-signature", "parameter", "property-declaration" ]
+}
