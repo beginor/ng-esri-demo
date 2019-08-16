@@ -1,0 +1,18 @@
+@import "../../../variables";
+
+:host {
+  @include full-width-height();
+  display: flex;
+  flex-direction: row;
+
+  .code-editor {
+    flex: 1;
+  }
+  .tools {
+    width: 48px;
+  }
+  .map-preview {
+    flex: 1;
+  }
+
+}
