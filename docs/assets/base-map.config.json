@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ChinaOnlineCommunity",
+    "title": "ChinaOnlineCommunity",
+    "thumbnailUrl": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer/tile/7/55/104",
+    "baseLayers": [
+      {
+        "url": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer"
+      }
+    ]
+  },
+  {
+    "id": "ChinaOnlineStreetGray",
+    "title": "ChinaOnlineStreetGray",
+    "thumbnailUrl": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetGray/MapServer/tile/7/55/104",
+    "baseLayers": [
+      {
+        "url": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetGray/MapServer"
+      }
+    ]
+  },
+  {
+    "id": "ChinaOnlineStreetPurplishBlue",
+    "title": "ChinaOnlineStreetPurplishBlue",
+    "thumbnailUrl": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/7/55/104",
+    "baseLayers": [
+      {
+        "url": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer"
+      }
+    ]
+  },
+  {
+    "id": "ChinaOnlineStreetWarm",
+    "title": "ChinaOnlineStreetWarm",
+    "thumbnailUrl": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetWarm/MapServer/tile/7/55/104",
+    "baseLayers": [
+      {
+        "url": "https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetWarm/MapServer"
+      }
+    ]
+  }
+]
