@@ -92,8 +92,7 @@ export class SceneEditorComponent implements OnInit, AfterViewInit, OnDestroy {
         this.sceneView.subscribe(view => {
             const viewingMode = view.viewingMode;
             this.initWebScene.initialViewProperties.viewingMode = viewingMode;
-            const camera = view.camera;
-            this.initWebScene.initialViewProperties.viewpoint.camera = camera;
+            this.initWebScene.initialViewProperties.viewpoint = view.viewpoint;
             this.loadCode();
         });
     }
