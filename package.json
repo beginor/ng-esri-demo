@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist coverage",
     "ng": "ng",
-    "build": "ng build --prod --base-href=/ng-seed/ --deploy-url=/ng-seed/",
+    "build": "ng build --prod --base-href=/ng-seed/",
     "lint": "ng lint",
     "start": "ng serve --host 0.0.0.0",
     "test": "ng test --watch",
