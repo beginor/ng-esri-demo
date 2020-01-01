@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    arcgisJsApi: 'https://js.arcgis.com/4.12',
+    arcgisJsApi: 'https://js.arcgis.com/4.14',
     trustedServers: [
         'www.arcgis.com',
         'www.arcgisonline.cn'

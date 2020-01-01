@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    arcgisJsApi: 'https://js.arcgis.com/4.12',
+    arcgisJsApi: 'http://localhost/arcgis-js-api/library/4.14',
     trustedServers: [
         'www.arcgis.com',
         'www.arcgisonline.cn'
