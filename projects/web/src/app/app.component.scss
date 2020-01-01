@@ -1,12 +1,35 @@
 @import '../variables';
 
 :host {
-  // background-color: #ccc;
 
   .app-main {
     @include full-width-height();
     @include no-margin-padding();
     overflow: hidden;
+
+    .map-container {
+      @include full-width-height();
+      @include no-margin-padding();
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .router-outlet-container {
+      position: absolute;
+      left: 0;
+      top: $nav-bar-height;
+      bottom: 0;
+      width: 360px;
+      background-color: $gray-100;
+
+      .toggler {
+        position: absolute;
+        left: 360px;
+        top: 45%;
+        background-color: $gray-100;
+        cursor: pointer;
+      }
+    }
   }
 
 }

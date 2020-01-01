@@ -1,4 +1,10 @@
 <app-nav-bar></app-nav-bar>
 <div class="app-main">
-  <router-outlet></router-outlet>
+  <div #map class="map-container"></div>
+  <div class="router-outlet-container" [@state]="state">
+    <router-outlet></router-outlet>
+    <div class="toggler p-2" (click)="toggleState($event)">
+      <i [class]="getToggleIconClass()"></i>
+    </div>
+  </div>
 </div>

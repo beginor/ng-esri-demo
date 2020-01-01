@@ -1,0 +1,34 @@
+{
+  "basemap": "streets",
+  "ground": "world-elevation",
+  "initialViewProperties": {
+    "viewingMode": "global",
+    "viewpoint": {
+      "rotation": 0,
+      "scale": 46359070.37028625,
+      "targetGeometry": {
+        "type": "point",
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "x": 12133235.05157794,
+        "y": 3245160.4121482302,
+        "z": 264.13689417764544
+      },
+      "camera": {
+        "position": {
+          "spatialReference": {
+            "latestWkid": 3857,
+            "wkid": 102100
+          },
+          "x": 12133235.050903443,
+          "y": 3199970.1768655158,
+          "z": 16276481.759841409
+        },
+        "heading": 0,
+        "tilt": 0
+      }
+    }
+  }
+}
