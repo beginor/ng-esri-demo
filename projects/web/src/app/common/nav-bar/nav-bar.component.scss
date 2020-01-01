@@ -1,7 +1,6 @@
 @import '../../../variables';
 
 :host {
-  // background-color: #ccc;
 
   .navbar {
     @include box-shadow(0 0 4px 0 $dark);
