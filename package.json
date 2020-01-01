@@ -8,7 +8,7 @@
     "ng": "ng",
     "build": "ng build --prod --base-href=/ng-esri-demo/",
     "lint": "ng lint",
-    "start": "ng serve --host 0.0.0.0 --base-href=/ng-seed/",
+    "start": "ng serve --host 0.0.0.0 --base-href=/ng-esri-demo/",
     "test": "ng test --watch",
     "test-coverage": "ng test --code-coverage",
     "e2e": "ng e2e --webdriver-update false",
