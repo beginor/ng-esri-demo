@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
     public slpks = ['大学城', '蕉门', '石井河口'];
 
-    private layer: __esri.IntegratedMeshLayer;
+    private layers: { [key: string]: __esri.IntegratedMeshLayer } = { };
 
     constructor(
         private map: MapService
@@ -24,30 +24,16 @@ export class HomeComponent implements OnInit {
 
     public showMeshLayer(slpk: string): void {
         this.map.sceneView.subscribe(async view => {
-            // if (!!this.layer) {
-            //     view.map.remove(this.layer);
-            //     this.layer = null;
-            // }
-            const layer = await arcgis.createIntegratedMeshLayer({
-                url: `http://localhost/slpk/${slpk}/`
-            });
-            // this.layer = layer;
-            view.map.add(layer);
-            await layer.when();
-            await view.goTo(
-                {
-                    target: layer.fullExtent,
-                    zoom: 17,
-                    heading: 0,
-                    tilt: 45
-                },
-                { animate: true, easing: 'in-out-cubic' }
-            );
-            if (!!this.layer) {
-                view.map.remove(this.layer);
-                this.layer = null;
+            let layer = this.layers[slpk];
+            if (!layer) {
+                layer = await arcgis.createIntegratedMeshLayer({
+                    url: `http://localhost/slpk/${slpk}/`
+                });
+                view.map.add(layer);
+                this.layers[slpk] = layer;
+                await layer.when();
             }
-            this.layer = layer;
+            await arcgis.flyTo(view, layer.fullExtent);
         });
     }
 
