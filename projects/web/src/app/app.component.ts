@@ -1,13 +1,14 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {
+    Component, OnInit, ViewChild, ElementRef, AfterViewInit
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
     trigger, animate, style, state, transition, AnimationEvent
 } from '@angular/animations';
 
-import { loadModules, loadScript } from 'esri-loader';
-import * as esri from 'esri-service';
 
-import { environment } from '../environments/environment';
+import * as arcgis from 'esri-service';
+
 import { MapService } from './services/map.service';
 
 @Component({
@@ -23,7 +24,7 @@ import { MapService } from './services/map.service';
         ])
     ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
     @ViewChild('map', { static: true})
     public mapRef: ElementRef<HTMLDivElement>;
@@ -35,9 +36,11 @@ export class AppComponent implements OnInit {
         private map: MapService
     ) { }
 
-    public async ngOnInit(): Promise<void> {
-        await this.initArcGisJsApi();
-        const webscene = await this.loadDefaultWebScene();
+    public ngOnInit(): void { }
+
+    public async ngAfterViewInit(): Promise<void> {
+        await this.map.initArcGisJsApi();
+        const webscene = await this.map.loadWebScene();
         const view = await this.createSceneView(webscene);
         await view.when();
         this.map.sceneView.next(view);
@@ -64,7 +67,7 @@ export class AppComponent implements OnInit {
     private async createSceneView(
         scene: __esri.WebScene
     ): Promise<__esri.SceneView> {
-        const view = await esri.createSceneView({
+        const view = await arcgis.createSceneView({
             container: this.mapRef.nativeElement,
             map: scene
         });
@@ -73,29 +76,6 @@ export class AppComponent implements OnInit {
         view.ui.move('compass', 'top-right');
         window['_sceneview'] = view;
         return view;
-    }
-
-    private async loadDefaultWebScene(): Promise<__esri.WebScene> {
-        const url = 'assets/default-web-scene.json';
-        const props = await this.http.get<__esri.WebSceneProperties>(url)
-            .toPromise();
-        const scene = await esri.createWebScene(props);
-        return scene;
-    }
-
-    private async initArcGisJsApi(): Promise<void> {
-        const options = {
-            url: `${environment.arcgisJsApi}/init.js`,
-            css: `${environment.arcgisJsApi}/esri/css/main.css`,
-            dojoConfig: environment.dojoConfig
-        };
-        // load esri script and dojoConfig;
-        await loadScript(options);
-        // add cors enabled hosts
-        const [config] = await loadModules(['esri/config']);
-        for (const server of environment.trustedServers) {
-            config.request.trustedServers.push(server);
-        }
     }
 
 }

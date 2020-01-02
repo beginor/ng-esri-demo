@@ -1,0 +1,16 @@
+<a class="m-1 text-muted" href="https://developers.arcgis.com/javascript/latest/api-reference/"
+  target="_blank"><i class="fas fa-info-circle"></i> ArcGIS JS API Reference</a>
+<iframe #editorEl class="code-editor border border-secondary m-1"
+  src="https://beginor.github.io/monaco-editor/index.html"
+  (load)="loadWebSceneToEditor()">
+</iframe>
+<div class="tools btn-group btn-group-sm m-1">
+  <button type="button" class="btn btn-sm btn-outline-secondary"
+    (click)="updateWebScene()">
+    <i class="fa fa-fw fa-angle-double-left"></i> 更新配置
+  </button>
+  <button type="button" class="btn btn-sm btn-outline-secondary"
+    (click)="updateSceneView()">
+    <i class="fa fa-fw fa-angle-double-right"></i> 更新地图
+  </button>
+</div>

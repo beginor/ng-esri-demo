@@ -15,6 +15,7 @@
     }
 
     .router-outlet-container {
+      @include box-shadow(0 0 4px 0 $dark);
       position: absolute;
       left: 0;
       top: $nav-bar-height;
@@ -23,6 +24,7 @@
       background-color: $gray-100;
 
       .toggler {
+        @include box-shadow(2px 0 2px 0 $gray-600);
         position: absolute;
         left: 360px;
         top: 45%;

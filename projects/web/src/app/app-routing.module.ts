@@ -15,6 +15,11 @@ const routes: Routes = [
         path: 'about',
         // tslint:disable-next-line: max-line-length
         loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+    },
+    {
+        path: 'scene-editor',
+        // tslint:disable-next-line: max-line-length
+        loadChildren: () => import('./scene-editor/scene-editor.module').then(m => m.SceneEditorModule)
     }
 ];
 

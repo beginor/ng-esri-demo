@@ -1,0 +1,15 @@
+@import "../../../variables";
+
+:host {
+  @include full-width-height();
+  display: flex;
+  flex-direction: column;
+
+  .code-editor {
+    flex: 1;
+  }
+  .tools {
+    // height: 48px;
+  }
+
+}

@@ -13,6 +13,7 @@ import { AppCommonModule } from './common/app-common.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EsriLoaderGuard } from './services/esri-loader-guard';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -34,7 +35,17 @@ import { EsriLoaderGuard } from './services/esri-loader-guard';
     ],
     bootstrap: [AppComponent],
     providers: [
-        EsriLoaderGuard
+        EsriLoaderGuard,
+        {
+            provide: 'ArcGisJsApiOptions',
+            useValue: {
+                version: '4.14',
+                url: `${environment.arcgisJsApi}/init.js`,
+                css: `${environment.arcgisJsApi}/esri/css/main.css`,
+                dojoConfig: environment.dojoConfig,
+                trustedServers: environment.trustedServers
+            }
+        }
     ]
 })
 export class AppModule {}
