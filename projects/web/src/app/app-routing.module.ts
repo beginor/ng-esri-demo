@@ -20,6 +20,11 @@ const routes: Routes = [
         path: 'scene-editor',
         // tslint:disable-next-line: max-line-length
         loadChildren: () => import('./scene-editor/scene-editor.module').then(m => m.SceneEditorModule)
+    },
+    {
+        path: 'mesh-layer',
+        // tslint:disable-next-line: max-line-length
+        loadChildren: () => import('./mesh-layer/mesh-layer.module').then(m => m.MeshLayerModule)
     }
 ];
 
