@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import * as arcgis from 'esri-service';
 
 import { MapService } from '../../services/map.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-home',
@@ -11,26 +12,30 @@ import { MapService } from '../../services/map.service';
 })
 export class HomeComponent implements OnInit {
 
-    public slpks = ['大学城', '蕉门', '石井河口'];
+    public slpks = [];
 
     private layers: { [key: string]: __esri.IntegratedMeshLayer } = { };
 
     constructor(
-        private map: MapService
+        private map: MapService,
+        private http: HttpClient
     ) { }
 
-    public ngOnInit(): void {
+    public async ngOnInit(): Promise<void> {
+        this.slpks = await this.http.get<any[]>('assets/slpk-list.json')
+            .toPromise();
     }
 
-    public showMeshLayer(slpk: string): void {
+    public showMeshLayer(slpk: any): void {
         this.map.sceneView.subscribe(async view => {
-            let layer = this.layers[slpk];
+            let layer = this.layers[slpk.title];
             if (!layer) {
                 layer = await arcgis.createIntegratedMeshLayer({
-                    url: `http://localhost/slpk/${slpk}/`
+                    url: slpk.url,
+                    title: slpk.title
                 });
                 view.map.add(layer);
-                this.layers[slpk] = layer;
+                this.layers[slpk.title] = layer;
                 await layer.when();
             }
             await arcgis.flyTo(view, layer.fullExtent);
