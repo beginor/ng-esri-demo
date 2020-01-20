@@ -1,0 +1,6 @@
+{
+  "/slpk": {
+    "target": "http://localhost",
+    "secure": false
+  }
+}
