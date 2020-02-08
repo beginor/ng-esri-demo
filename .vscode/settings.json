@@ -17,6 +17,11 @@
   "extensions.autoUpdate": false,
   "files.autoSave": "off",
   "files.insertFinalNewline": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  },
   "git.enabled": true,
   "npm.autoDetect": "off",
   "typescript.tsc.autoDetect": "off",

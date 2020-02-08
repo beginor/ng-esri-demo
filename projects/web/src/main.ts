@@ -11,7 +11,7 @@ if (environment.production) {
     enableProdMode();
 }
 
-registerLocaleData(zhHans, zhHansEx);
+registerLocaleData(zhHans, 'zh-Hans', zhHansEx);
 
 platformBrowserDynamic().bootstrapModule(AppModule)
     .then(() => {
