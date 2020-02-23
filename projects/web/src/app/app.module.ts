@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +27,6 @@ import { environment } from '../environments/environment';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        HttpClientJsonpModule,
         NgbModule,
         AppSharedModule,
         AppCommonModule,
@@ -48,4 +47,4 @@ import { environment } from '../environments/environment';
         }
     ]
 })
-export class AppModule {}
+export class AppModule { }
