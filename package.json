@@ -44,7 +44,7 @@
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2",
     "bootstrap": "^4.4.1",
-    "@ng-bootstrap/ng-bootstrap": "^5.2.1",
+    "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "@fortawesome/fontawesome-free": "^5.12.0",
     "esri-loader": "^2.13.0",
     "esri-service": "^2.6.0"
