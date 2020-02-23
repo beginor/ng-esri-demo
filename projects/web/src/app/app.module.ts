@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +24,6 @@ import { AppComponent } from './app.component';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        HttpClientJsonpModule,
         NgbModule,
         AppSharedModule,
         AppCommonModule,
@@ -32,4 +31,4 @@ import { AppComponent } from './app.component';
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
