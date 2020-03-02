@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import * as arcgis from 'esri-service';
 
 import { MapService } from '../../services/map.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-mesh-layer-home',
