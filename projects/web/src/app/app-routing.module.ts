@@ -25,6 +25,11 @@ const routes: Routes = [
         path: 'mesh-layer',
         // tslint:disable-next-line: max-line-length
         loadChildren: () => import('./mesh-layer/mesh-layer.module').then(m => m.MeshLayerModule)
+    },
+    {
+        path: 'time-spatial',
+        // tslint:disable-next-line: max-line-length
+        loadChildren: () => import('./time-spatial/time-spatial.module').then(m => m.TimeSpatialModule)
     }
 ];
 
