@@ -6,7 +6,7 @@ import { MapService } from '../../services/map.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-    selector: 'app-home',
+    selector: 'app-mesh-layer-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
