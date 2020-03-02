@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import * as arcgis from 'esri-service';
@@ -10,7 +10,7 @@ import { MapService } from '../../services/map.service';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
     public slpks = [];
 
@@ -24,6 +24,15 @@ export class HomeComponent implements OnInit {
     public async ngOnInit(): Promise<void> {
         this.slpks = await this.http.get<any[]>('assets/slpk-list.json')
             .toPromise();
+    }
+
+    public ngOnDestroy(): void {
+        this.map.sceneView.subscribe(view => {
+            for (const slpk of this.slpks) {
+                const layer = this.layers[slpk.title];
+                view.map.remove(layer);
+            }
+        });
     }
 
     public showMeshLayer(slpk: any): void {
