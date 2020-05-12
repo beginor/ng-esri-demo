@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="card m-2">
+  <div class="card-header">
+    Client Feature Layer
+  </div>
+  <div class="card-body">
+    Create a FeatureLayer with client features from service.
+    <form>
+      <div class="form-group">
+        <label for="serviceUrl"></label>
+        <input class="form-control" [(ngModel)]="serviceUrl" type="text" name="serviceUrl" id="serviceUrl">
+      </div>
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="where" type="text" name="where" id="where">
+      </div>
+      <button class="btn btn-primary" type="button" (click)="addLayer()">
+        Add Layer
+      </button>
+      <button class="btn btn-primary" type="button" (click)="removeLayer()">
+        Remove Layer
+      </button>
+    </form>
+  </div>
+</div>
