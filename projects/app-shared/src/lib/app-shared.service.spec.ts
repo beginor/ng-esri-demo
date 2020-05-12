@@ -6,7 +6,7 @@ describe('AppSharedService', () => {
     beforeEach(() => TestBed.configureTestingModule({}));
 
     it('should be created', () => {
-        const service: AppSharedService = TestBed.get(AppSharedService);
+        const service: AppSharedService = TestBed.inject(AppSharedService);
         expect(service).toBeTruthy();
     });
 });
