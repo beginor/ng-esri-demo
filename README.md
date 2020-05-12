@@ -2,14 +2,17 @@
 
 Angular and ArcGIS API for JavaScript 4.x Demo Project
 
+- Web: <https://beginor.github.io/ng-esri-demo/web/>
+- Handset: <https://beginor.github.io/ng-esri-demo/handset/>
+
 ## Tech stack
 
-  - typescript
-  - angular
-  - ng-bootstrap
-  - font awesome
-  - angular-cli
-  - ArcGIS API for JavaScript 4.x
+- typescript
+- angular
+- ng-bootstrap
+- font awesome
+- angular-cli
+- ArcGIS API for JavaScript 4.x
 
 ## Usage
 
