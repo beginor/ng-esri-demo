@@ -12,8 +12,11 @@
       <div class="form-group">
         <input class="form-control" [(ngModel)]="where" type="text" name="where" id="where">
       </div>
-      <button class="btn btn-primary" type="button" (click)="addLayer()">
-        Add Layer
+      <button class="btn btn-primary" type="button" (click)="addLayerClient()">
+        Client Feature Layer
+      </button>
+      <button class="btn btn-primary" type="button" (click)="addLayerServer()">
+        Server Feature Layer
       </button>
       <button class="btn btn-primary" type="button" (click)="removeLayer()">
         Remove Layer

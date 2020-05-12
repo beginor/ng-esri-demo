@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     public ngOnInit(): void {
     }
 
-    public async addLayer(): Promise<void> {
+    public async addLayerClient(): Promise<void> {
         if (!this.serviceUrl) {
             alert('Invalid serviceUrl');
             return;
@@ -67,6 +67,77 @@ export class HomeComponent implements OnInit {
             geometryType: 'point',
             objectIdField: 'objectid',
             spatialReference: featureSet.spatialReference,
+            renderer: {
+                type: 'simple',
+                symbol: {
+                    type: 'point-3d',
+                    callout: {
+                        size: 1,
+                        type: 'line',
+                        color: '#1AAAA0',
+                        border: {
+                            size: 0.5,
+                            color: '#FFFFFF'
+                        }
+                    },
+                    symbolLayers: [
+                        {
+                            size: 32,
+                            type: 'icon',
+                            anchor: 'bottom',
+                            border: {
+                                size: 1,
+                                color: '#FFFFFF'
+                            },
+                            resource: {
+                                href: 'https://app.gdeei.cn/arcgis-js-api/map-icons/assets/scenes/water-section-nation-1_1.png'
+                            }
+                        }
+                    ],
+                    verticalOffset: {
+                        screenLength: 50,
+                        maxWorldLength: 300,
+                        minWorldLength: 1
+                    }
+                }
+            } as any,
+            labelingInfo: [
+                {
+                    symbol: {
+                        type: 'label-3d',
+                        symbolLayers: [
+                            {
+                                halo: {
+                                    size: 1.5,
+                                    color: [0, 0, 0, 0.6]
+                                },
+                                size: 12,
+                                type: 'text',
+                                material: {
+                                    color: [ 200, 255, 255]
+                                }
+                            }
+                        ]
+                    },
+                    labelPlacement: 'above-center',
+                    useCodedValues: false,
+                    labelExpressionInfo: {
+                        expression: '$feature.section_name'
+                    }
+                }
+            ] as any[],
+            labelsVisible: true
+        });
+        this.map.sceneView.subscribe(view => {
+            view.map.add(layer);
+            this.layer = layer;
+        });
+    }
+
+    public async addLayerServer(): Promise<void> {
+        const layer = await arcgis.createFeatureLayer({
+            url: this.serviceUrl,
+            definitionExpression: this.where,
             renderer: {
                 type: 'simple',
                 symbol: {
