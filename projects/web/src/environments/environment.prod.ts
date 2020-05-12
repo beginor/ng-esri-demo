@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    arcgisJsApi: 'https://app.gdeei.cn/arcgis-js-api/library/4.14',
+    arcgisJsApi: 'https://app.gdeei.cn/arcgis-js-api/library/4.15',
     trustedServers: [
         'www.arcgis.com',
         'www.arcgisonline.cn'
