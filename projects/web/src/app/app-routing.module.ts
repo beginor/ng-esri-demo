@@ -15,7 +15,7 @@ const routes: Routes = [
         loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
     }
 ];
-// tslint:disable: max-line-length
+// tslint:enable: max-line-length
 
 @NgModule({
     imports: [
