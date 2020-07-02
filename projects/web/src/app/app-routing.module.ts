@@ -34,6 +34,10 @@ const routes: Routes = [
     {
         path: 'plane',
         loadChildren: () => import('./plane/plane.module').then(m => m.PlaneModule)
+    },
+    {
+        path: 'texture',
+        loadChildren: () => import('./texture/texture.module').then(m => m.TextureModule)
     }
 ];
 // tslint:enable: max-line-length
