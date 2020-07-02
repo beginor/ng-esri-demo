@@ -30,6 +30,10 @@ const routes: Routes = [
     {
         path: 'client-feature',
         loadChildren: () => import('./client-feature/client-feature.module').then(m => m.ClientFeatureModule)
+    },
+    {
+        path: 'plane',
+        loadChildren: () => import('./plane/plane.module').then(m => m.PlaneModule)
     }
 ];
 // tslint:enable: max-line-length
