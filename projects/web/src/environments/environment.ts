@@ -14,7 +14,18 @@ export const environment = {
             'esri-native-promise': true
         },
         locale: 'zh-cn',
-        async: true
+        async: true,
+        packages: [
+            {
+                name: 'THREE',
+                location: 'https://app.gdeei.cn/arcgis-js-api/three/build/',
+                main: 'three.min'
+            },
+            {
+                name: 'beginor',
+                location: 'https://app.gdeei.cn/arcgis-js-api/beginor/'
+            }
+        ]
     }
 };
 

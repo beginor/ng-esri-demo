@@ -58,7 +58,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "@fortawesome/fontawesome-free": "^5.12.0",
     "esri-loader": "^2.14.0",
-    "esri-service": "^2.7.0"
+    "esri-service": "^2.8.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.5",
