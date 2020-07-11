@@ -21,15 +21,16 @@
       top: $nav-bar-height;
       bottom: 0;
       width: 360px;
-      background-color: rgba($color: $gray-100, $alpha: 0.85);
+      background-color: rgba($color: $gray-200, $alpha: 0.75);
+      backdrop-filter: blur(8px);
 
       .toggler {
         @include box-shadow(2px 0 2px 0 $gray-600);
         position: absolute;
         left: 360px;
         top: 45%;
-        background-color: $gray-100;
-        cursor: pointer;
+        background-color: rgba($color: $gray-200, $alpha: 0.75);
+        backdrop-filter: blur(8px);
       }
     }
   }
