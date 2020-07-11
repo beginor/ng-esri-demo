@@ -21,7 +21,7 @@
       top: $nav-bar-height;
       bottom: 0;
       width: 360px;
-      background-color: $gray-100;
+      background-color: rgba($color: $gray-100, $alpha: 0.85);
 
       .toggler {
         @include box-shadow(2px 0 2px 0 $gray-600);
