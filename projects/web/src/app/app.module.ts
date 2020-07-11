@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,8 +32,8 @@ import { environment } from '../environments/environment';
         AppCommonModule,
         AppRoutingModule
     ],
-    bootstrap: [AppComponent],
     providers: [
+        { provide: LOCALE_ID, useValue: 'zh-Hans' },
         EsriLoaderGuard,
         {
             provide: 'ArcGisJsApiOptions',
@@ -45,6 +45,7 @@ import { environment } from '../environments/environment';
                 trustedServers: environment.trustedServers
             }
         }
-    ]
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
