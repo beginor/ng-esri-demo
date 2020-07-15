@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import * as arcgis from 'esri-service';
 
-import { MapService } from '../../services/map.service';
+import { AppSharedService } from 'app-shared';
 import { loadModules } from 'esri-loader';
 
 @Component({
@@ -12,7 +12,7 @@ import { loadModules } from 'esri-loader';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-    private textureRenderer: arcgis.TextureRenderer;
+    private textureRenderer!: arcgis.TextureRenderer | null;
     private textures = [
         './assets/viz/vis_202004280000.jpg',
         './assets/viz/vis_202004280010.jpg',
@@ -37,10 +37,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         './assets/viz/vis_202004280450.jpg',
         './assets/viz/vis_202004280500.jpg'
     ];
-    private playing: boolean;
+    private playing = false;
 
     constructor(
-        private map: MapService
+        private appShared: AppSharedService
     ) { }
 
     public ngOnInit(): void { }
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             return;
         }
 
-        this.map.sceneView.subscribe(async view => {
+        this.appShared.mapView.subscribe(async view => {
             const [externalRenderers] = await loadModules<[
                 __esri.externalRenderers
             ]>([
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     public removeTextureRenderer(): void {
         this.playing = false;
-        this.map.sceneView.subscribe(async view => {
+        this.appShared.mapView.subscribe(async view => {
             if (!!this.textureRenderer) {
                 const [externalRenderers] = await loadModules<[
                     __esri.externalRenderers
@@ -102,7 +102,9 @@ export class HomeComponent implements OnInit, OnDestroy {
             if (!this.play) {
                 return;
             }
-            await this.textureRenderer.loadTexture(this.textures[i]);
+            if (!!this.textureRenderer) {
+                await this.textureRenderer.loadTexture(this.textures[i]);
+            }
             i += 1;
             i = i % this.textures.length;
             // console.log(i);

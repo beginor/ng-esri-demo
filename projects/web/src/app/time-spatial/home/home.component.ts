@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import * as arcgis from 'esri-service';
 
-import { MapService } from '../../services/map.service';
+import { AppSharedService } from 'app-shared';
 
 @Component({
     selector: 'app-time-spatial-home',
@@ -11,22 +11,22 @@ import { MapService } from '../../services/map.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-    private layer: __esri.FeatureLayer;
-    private legend: __esri.Expand;
+    private layer!: __esri.FeatureLayer;
+    private legend!: __esri.Expand;
 
     constructor(
-        private map: MapService
+        private appShared: AppSharedService
     ) { }
 
     public ngOnInit(): void {
-        this.map.sceneView.subscribe(async view => {
+        this.appShared.mapView.subscribe(async view => {
             await this.initLegend(view);
             await this.initLayer(view);
         });
     }
 
     public ngOnDestroy(): void {
-        this.map.sceneView.subscribe(view => {
+        this.appShared.mapView.subscribe(view => {
             if (!!this.layer) {
                 view.map.remove(this.layer);
                 view.ui.remove(this.legend);

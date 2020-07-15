@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { loadModules } from 'esri-loader';
 import * as arcgis from 'esri-service';
 
-import { MapService } from '../../services/map.service';
+import { AppSharedService } from 'app-shared';
 
 @Component({
     selector: 'app-client-feature-home',
@@ -15,10 +15,10 @@ export class HomeComponent implements OnInit {
     public serviceUrl = 'https://it.gdeei.cn/gis/rest/services/wgs84_gd_env_water_section_geo_his_data/MapServer/0'
     public where = 'business_id = \'69e0118b-7df7-4385-8768-390c53d32ead\' and stat_time = \'2020-03-01\'';
 
-    private layer: __esri.FeatureLayer;
+    private layer!: __esri.FeatureLayer;
 
     constructor(
-        private map: MapService
+        private appShared: AppSharedService
     ) { }
 
     public ngOnInit(): void {
@@ -128,7 +128,7 @@ export class HomeComponent implements OnInit {
             ] as any[],
             labelsVisible: true
         });
-        this.map.sceneView.subscribe(view => {
+        this.appShared.mapView.subscribe(view => {
             view.map.add(layer);
             this.layer = layer;
         });
@@ -199,7 +199,7 @@ export class HomeComponent implements OnInit {
             ] as any[],
             labelsVisible: true
         });
-        this.map.sceneView.subscribe(view => {
+        this.appShared.mapView.subscribe(view => {
             view.map.add(layer);
             this.layer = layer;
         });
@@ -209,7 +209,7 @@ export class HomeComponent implements OnInit {
         if (!this.layer) {
             return;
         }
-        this.map.sceneView.subscribe(view => {
+        this.appShared.mapView.subscribe(view => {
             view.map.remove(this.layer);
         });
     }

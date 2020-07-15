@@ -3,7 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { loadModules } from 'esri-loader';
 import * as arcgis from 'esri-service';
 
-import { MapService } from '../../services/map.service';
+import { AppSharedService } from 'app-shared';
 
 @Component({
     selector: 'app-plane-home',
@@ -13,20 +13,20 @@ import { MapService } from '../../services/map.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
     constructor(
-        private map: MapService
+        private appShared: AppSharedService
     ) { }
 
     public ngOnInit(): void {
     }
 
     public ngOnDestroy(): void {
-        this.map.sceneView.subscribe(view => {
+        this.appShared.mapView.subscribe(view => {
             this.removeGraphic(view);
         });
     }
 
     public makePlane(): void {
-        this.map.sceneView.subscribe(async view => {
+        this.appShared.mapView.subscribe(async view => {
             this.removeGraphic(view);
             const radius = 6378137.0;
             const [Mesh, meshUtils, Extent] = await loadModules<[

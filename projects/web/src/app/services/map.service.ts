@@ -13,9 +13,7 @@ import * as esri from 'esri-service';
 })
 export class MapService {
 
-    public sceneView = new AsyncSubject<__esri.SceneView>();
-
-    private props: __esri.WebSceneProperties;
+    private props: __esri.WebSceneProperties | undefined = undefined;
 
     constructor(
         private http: HttpClient,
@@ -33,7 +31,6 @@ export class MapService {
     }
 
     public async loadWebScene(): Promise<__esri.WebScene> {
-        const url = 'assets/default-web-scene.json';
         const props = await this.loadWebSceneProperties();
         const scene = await esri.createWebScene(props);
         return scene;

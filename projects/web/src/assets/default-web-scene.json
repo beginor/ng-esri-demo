@@ -1,5 +1,5 @@
 {
-  "basemap": "streets",
+  "basemap": "satellite",
   "ground": "world-elevation",
   "initialViewProperties": {
     "viewingMode": "global",

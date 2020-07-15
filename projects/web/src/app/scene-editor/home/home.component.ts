@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 import * as arcgis from 'esri-service';
 
+import { AppSharedService } from 'app-shared';
 import { MapService } from '../../services/map.service';
 
 @Component({
@@ -13,13 +14,14 @@ import { MapService } from '../../services/map.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
     @ViewChild('editorEl', { static: true })
-    public editorEl: ElementRef<HTMLIFrameElement>;
+    public editorEl!: ElementRef<HTMLIFrameElement>;
 
     private messageEventHandler: any;
-    private webscene: __esri.WebSceneProperties;
+    private webscene: __esri.WebSceneProperties = {};
 
     constructor(
-        private map: MapService
+        private map: MapService,
+        private appShared: AppSharedService
     ) { }
 
     public ngOnInit(): void {
@@ -33,24 +35,33 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     public async loadWebSceneToEditor(): Promise<void> {
         const props = await this.map.loadWebSceneProperties();
-        this.editorEl.nativeElement.contentWindow.postMessage({
-            language: 'json',
-            value: JSON.stringify(props, null, '  ')
-        }, '*');
+        const contentWindow = this.editorEl.nativeElement.contentWindow;
+        if (!!contentWindow) {
+            contentWindow.postMessage({
+                language: 'json',
+                value: JSON.stringify(props, null, '  ')
+            }, '*');
+        }
     }
 
     public async updateWebScene(): Promise<void> {
         const props = await this.map.loadWebSceneProperties();
-        this.map.sceneView.subscribe(view => {
-            const viewingMode = view.viewingMode;
-            props.initialViewProperties.viewingMode = viewingMode;
-            props.initialViewProperties.viewpoint = view.viewpoint;
+        this.appShared.mapView.subscribe(view => {
+            if (!props.initialViewProperties) {
+                props.initialViewProperties = {};
+                const viewingMode = view.viewingMode;
+                props.initialViewProperties.viewingMode = viewingMode;
+                props.initialViewProperties.viewpoint = view.viewpoint;
+            }
             this.loadWebSceneToEditor();
         });
     }
 
     public updateSceneView(): void {
-        this.editorEl.nativeElement.contentWindow.postMessage('getValue', '*');
+        const contentWindow = this.editorEl.nativeElement.contentWindow;
+        if (!!contentWindow) {
+            contentWindow.postMessage('getValue', '*');
+        }
     }
 
     private cloneWebScene(): __esri.WebSceneProperties {
@@ -62,7 +73,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         if (!this.editorEl.nativeElement.src.startsWith(e.origin)) {
             return;
         }
-        this.map.sceneView.subscribe(async view => {
+        this.appShared.mapView.subscribe(async view => {
             try {
                 const webSceneProps = JSON.parse(e.data);
                 this.webscene = webSceneProps;

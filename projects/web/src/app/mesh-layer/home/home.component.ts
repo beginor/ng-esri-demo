@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import * as arcgis from 'esri-service';
 
-import { MapService } from '../../services/map.service';
+import { AppSharedService } from 'app-shared';
 
 @Component({
     selector: 'app-mesh-layer-home',
@@ -12,12 +12,12 @@ import { MapService } from '../../services/map.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-    public slpks = [];
+    public slpks: Array<{ title: string }> = [];
 
     private layers: { [key: string]: __esri.IntegratedMeshLayer } = { };
 
     constructor(
-        private map: MapService,
+        private appShared: AppSharedService,
         private http: HttpClient
     ) { }
 
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     public ngOnDestroy(): void {
-        this.map.sceneView.subscribe(view => {
+        this.appShared.mapView.subscribe(view => {
             for (const slpk of this.slpks) {
                 const layer = this.layers[slpk.title];
                 view.map.remove(layer);
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     public showMeshLayer(slpk: any): void {
-        this.map.sceneView.subscribe(async view => {
+        this.appShared.mapView.subscribe(async view => {
             let layer = this.layers[slpk.title];
             if (!layer) {
                 layer = await arcgis.createIntegratedMeshLayer({
