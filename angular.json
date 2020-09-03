@@ -27,9 +27,14 @@
               "projects/web/src/favicon.ico",
               "projects/web/src/assets",
               {
-                "input": "node_modules/bootstrap-icons/",
-                "glob": "**/*.svg",
-                "output": "assets/icons/bootstrap"
+                "input": "node_modules/bootstrap-icons",
+                "glob": "*.svg",
+                "output": "assets/icons"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/sprites",
+                "glob": "*.svg",
+                "output": "assets/icons/fontawesome-free"
               }
             ],
             "styles": [
