@@ -4,25 +4,25 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "npm:start",
+      "label": "npm:start-web",
       "command": "npm",
       "type": "shell",
-      "args": ["run", "start"],
+      "args": ["run", "start-web"],
       "problemMatcher": ["$tsc", "$node-sass"]
     },
     {
-      "label": "npm:build",
+      "label": "npm:build-web",
       "command": "npm",
       "type": "shell",
-      "args": ["run", "build"],
+      "args": ["run", "build-web"],
       "problemMatcher": ["$tsc", "$node-sass"],
       "group": { "kind": "build", "isDefault": true }
     },
     {
-      "label": "npm:test-coverage",
+      "label": "npm:test-web-coverage",
       "command": "npm",
       "type": "shell",
-      "args": ["run", "test-coverage"],
+      "args": ["run", "test-web-coverage"],
       "problemMatcher": [],
       "group": { "kind": "test", "isDefault": true }
     }
