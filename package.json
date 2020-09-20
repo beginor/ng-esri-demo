@@ -7,7 +7,7 @@
     "clean": "rm -rf dist coverage",
     "ng": "ng",
     "build": "npm run build-shared && npm run build-web && npm run build-handset",
-    "build-shared": "ng build app-shared",
+    "build-shared": "ng build app-shared --prod",
     "build-web": "ng build web --prod --base-href=/ng-esri-demo/web/",
     "build-handset": "ng build handset --prod --base-href=/ng-esri-demo/handset/",
     "watch-web": "ng build web --watch --base-href=/ng-esri-demo/web/",
