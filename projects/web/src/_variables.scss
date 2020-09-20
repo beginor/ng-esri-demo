@@ -18,3 +18,9 @@ $nav-bar-height: 54px;
   margin: 0;
   padding: 0;
 }
+
+@mixin bg-blur($bg_color, $blur) {
+  background-color: $bg_color !important;
+  backdrop-filter: blur($blur);
+}
+

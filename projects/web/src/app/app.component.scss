@@ -2,17 +2,17 @@
 
 :host {
 
+  .map-container {
+    @include full-width-height();
+    @include no-margin-padding();
+    overflow: hidden;
+    background-color: #000;
+  }
+
   .app-main {
     @include full-width-height();
     @include no-margin-padding();
     overflow: hidden;
-
-    .map-container {
-      @include full-width-height();
-      @include no-margin-padding();
-      overflow: hidden;
-      background-color: #000;
-    }
 
     .router-outlet-container {
       @include box-shadow(0 0 4px 0 $dark);

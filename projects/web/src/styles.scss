@@ -16,7 +16,7 @@ body {
     display: block;
     @include full-width-height();
     @include no-margin-padding();
-    padding: $nav-bar-height 0 0 0;
+    // padding: $nav-bar-height 0 0 0;
 
     .loading-indicator {
       position: fixed;
@@ -30,4 +30,24 @@ body {
       line-height: 48px;
     }
   }
+}
+
+.bg-dark-blur {
+  @include bg-blur(rgba($dark, 0.5), 12px);
+}
+
+.bg-primary-blur {
+  @include bg-blur(rgba($primary, 0.5), 12px);
+}
+
+.esri-ui-top-left {
+  top: 58px !important;
+}
+
+.esri-ui-top-right {
+  top: 58px !important;
+}
+
+.esri-attribution {
+  @include bg-blur(rgba($white, 0.3), 12px);
 }
