@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppSharedComponent } from './app-shared.component';
 
@@ -6,12 +6,12 @@ describe('AppSharedComponent', () => {
     let component: AppSharedComponent;
     let fixture: ComponentFixture<AppSharedComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
             declarations: [AppSharedComponent]
         })
         .compileComponents();
-    }));
+    });
 
     beforeEach(() => {
         fixture = TestBed.createComponent(AppSharedComponent);

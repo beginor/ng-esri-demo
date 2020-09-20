@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -7,11 +7,10 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
 
     let fixture: ComponentFixture<HomeComponent>;
-    let target: HomeComponent;
-    let targetEl: HTMLElement;
+    let component: HomeComponent;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
             imports: [
                 NoopAnimationsModule,
                 RouterTestingModule
@@ -20,15 +19,16 @@ describe('HomeComponent', () => {
                 HomeComponent
             ]
         }).compileComponents();
-        // create test target;
-        fixture = TestBed.createComponent(HomeComponent);
-        target = fixture.componentInstance;
-        targetEl = fixture.debugElement.nativeElement;
-        fixture.detectChanges();
-    }));
+    });
 
-    it('should create HomeComponent', async(() => {
-        expect(target).toBeTruthy();
-    }));
+    beforeEach(() => {
+        fixture = TestBed.createComponent(HomeComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should create HomeComponent', () => {
+        expect(component).toBeTruthy();
+    });
 
 });
