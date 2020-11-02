@@ -58,8 +58,8 @@
     "bootstrap-icons": "^1.1.0",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "@fortawesome/fontawesome-free": "^5.13.1",
-    "esri-loader": "^2.14.0",
-    "esri-service": "^2.8.0"
+    "esri-loader": "^2.16.0",
+    "esri-service": "^2.9.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1002.0",
@@ -82,6 +82,6 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2",
-    "@types/arcgis-js-api": "^4.15.0"
+    "@types/arcgis-js-api": "^4.17.0"
   }
 }
