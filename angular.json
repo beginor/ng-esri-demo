@@ -294,7 +294,128 @@
           }
         }
       }
+    },
+    "zorro": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/zorro",
+      "sourceRoot": "projects/zorro/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/zorro",
+            "index": "projects/zorro/src/index.html",
+            "main": "projects/zorro/src/main.ts",
+            "polyfills": "projects/zorro/src/polyfills.ts",
+            "tsConfig": "projects/zorro/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/zorro/src/favicon.ico",
+              "projects/zorro/src/assets"
+            ],
+            "styles": [
+              "projects/zorro/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/zorro/src/environments/environment.ts",
+                  "with": "projects/zorro/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "zorro:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "zorro:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "zorro:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/zorro/src/test.ts",
+            "polyfills": "projects/zorro/src/polyfills.ts",
+            "tsConfig": "projects/zorro/tsconfig.spec.json",
+            "karmaConfig": "projects/zorro/karma.conf.js",
+            "assets": [
+              "projects/zorro/src/favicon.ico",
+              "projects/zorro/src/assets"
+            ],
+            "styles": [
+              "projects/zorro/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/zorro/tsconfig.app.json",
+              "projects/zorro/tsconfig.spec.json",
+              "projects/zorro/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/zorro/e2e/protractor.conf.js",
+            "devServerTarget": "zorro:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "zorro:serve:production"
+            }
+          }
+        }
+      }
     }
   },
-  "defaultProject": "web"
+  "defaultProject": "zorro"
 }
