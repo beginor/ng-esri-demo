@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.page-nz-breadcrumb {
+  margin: 16px 0;
+}
+
+.page-nz-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+}
