@@ -317,9 +317,15 @@
             "aot": true,
             "assets": [
               "projects/zorro/src/favicon.ico",
-              "projects/zorro/src/assets"
+              "projects/zorro/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "projects/zorro/src/theme.less",
               "projects/zorro/src/styles.scss"
             ],
             "scripts": []
