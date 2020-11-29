@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
-import { AppSharedComponent } from './app-shared.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { SvgIconComponent } from './svg-icon/svg-icon.component';
 
 @NgModule({
-    declarations: [AppSharedComponent],
-    imports: [
+    declarations: [
+        SvgIconComponent
     ],
-    exports: [AppSharedComponent]
+    imports: [
+        HttpClientModule
+    ],
+    exports: [
+        SvgIconComponent
+    ]
 })
 export class AppSharedModule { }

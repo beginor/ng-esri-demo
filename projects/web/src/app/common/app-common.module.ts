@@ -3,22 +3,21 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { AppSharedModule } from 'app-shared';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { SvgIconComponent } from './svg-icon/svg-icon.component';
 
 @NgModule({
     declarations: [
-        NavBarComponent,
-        SvgIconComponent
+        NavBarComponent
     ],
     imports: [
         CommonModule,
         HttpClientModule,
-        RouterModule
+        RouterModule,
+        AppSharedModule
     ],
     exports: [
-        NavBarComponent,
-        SvgIconComponent
+        NavBarComponent
     ]
 })
 export class AppCommonModule { }
