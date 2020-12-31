@@ -1,16 +1,16 @@
-import { browser, by, element, promise } from 'protractor';
+import { browser, by, element } from 'protractor';
 
 export class HomePage {
 
-    public navigateTo(): promise.Promise<any> {
+    public async navigateTo(): Promise<any> {
         return browser.get('/home');
     }
 
-    public getHelloButtonText(): promise.Promise<string> {
+    public async getHelloButtonText(): Promise<string> {
         return element(by.css('app-home button.btn')).getText();
     }
 
-    public clickHelloButton(): promise.Promise<void> {
+    public async clickHelloButton(): Promise<void> {
         return element(by.css('app-home button.btn')).click();
     }
 
