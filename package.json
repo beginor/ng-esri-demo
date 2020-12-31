@@ -55,7 +55,7 @@
     "zone.js": "~0.10.2",
     "@angular/localize": "~11.0.5",
     "bootstrap": "^4.5.3",
-    "bootstrap-icons": "^1.1.0",
+    "bootstrap-icons": "^1.2.2",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@angular/cdk": "^11.0.3",
