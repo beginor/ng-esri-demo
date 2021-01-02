@@ -43,9 +43,9 @@
             ],
             "scripts": [
               {
-                "input": "projects/web/src/assets/config.js",
+                "input": "arcgis-js-api-config.js",
                 "inject": true,
-                "bundleName": "config"
+                "bundleName": "arcgis-js-api-config"
               }
             ]
           },
