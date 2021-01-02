@@ -3,8 +3,8 @@
   <div #map class="map-container"></div>
   <div class="router-outlet-container" [@state]="state">
     <router-outlet></router-outlet>
-    <div class="toggler p-2" (click)="toggleState($event)">
-      <i [class]="getToggleIconClass()"></i>
+    <div class="toggler p-1" (click)="toggleState($event)">
+      <svg-icon [path]="getToggleIcon()"></svg-icon>
     </div>
   </div>
 </div>

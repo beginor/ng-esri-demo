@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { environment } from '../environments/environment';
-import { EsriLoaderGuard } from './services/esri-loader-guard';
 
 // tslint:disable: max-line-length
 const routes: Routes = [

@@ -17,6 +17,6 @@ platformBrowserDynamic().bootstrapModule(AppModule)
     .then(() => {
         // console.log('app bootstrap');
     })
-    .catch(err => {
+    .catch((err: any) => {
         console.error(err);
     });

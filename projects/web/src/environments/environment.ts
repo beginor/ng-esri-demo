@@ -4,31 +4,7 @@
 
 export const environment = {
     production: false,
-    arcgisJsApi: 'https://app.gdeei.cn/arcgis-js-api/library/4.15',
-    trustedServers: [
-        'www.arcgis.com',
-        'www.arcgisonline.cn'
-    ],
-    dojoConfig: {
-        has: {
-            'esri-native-promise': true
-        },
-        locale: 'zh-cn',
-        async: true,
-        packages: [
-            {
-                name: 'THREE',
-                location: 'https://app.gdeei.cn/arcgis-js-api/three/build/',
-                main: 'three.min'
-            },
-            {
-                name: 'beginor',
-                location: 'https://app.gdeei.cn/arcgis-js-api/beginor/'
-            }
-        ]
-    }
-};
-
+}
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.

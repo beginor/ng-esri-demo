@@ -12,9 +12,6 @@ import { AppSharedModule } from 'app-shared';
 import { AppCommonModule } from './common/app-common.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EsriLoaderGuard } from './services/esri-loader-guard';
-import { environment } from '../environments/environment';
-
 
 @NgModule({
     declarations: [
@@ -33,18 +30,7 @@ import { environment } from '../environments/environment';
         AppRoutingModule
     ],
     providers: [
-        { provide: LOCALE_ID, useValue: 'zh-Hans' },
-        EsriLoaderGuard,
-        {
-            provide: 'ArcGisJsApiOptions',
-            useValue: {
-                version: '4.14',
-                url: `${environment.arcgisJsApi}/init.js`,
-                css: `${environment.arcgisJsApi}/esri/css/main.css`,
-                dojoConfig: environment.dojoConfig,
-                trustedServers: environment.trustedServers
-            }
-        }
+        { provide: LOCALE_ID, useValue: 'zh-Hans' }
     ],
     bootstrap: [AppComponent]
 })

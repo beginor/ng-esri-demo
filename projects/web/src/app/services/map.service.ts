@@ -1,7 +1,5 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { AsyncSubject } from 'rxjs';
 
 import {
     loadModules, loadScript, ILoadScriptOptions, isLoaded
@@ -16,9 +14,7 @@ export class MapService {
     private props: __esri.WebSceneProperties | undefined = undefined;
 
     constructor(
-        private http: HttpClient,
-        @Inject('ArcGisJsApiOptions')
-        private options: ArcGisJsApiOptions
+        private http: HttpClient
     ) { }
 
     public async loadWebSceneProperties(): Promise<__esri.WebSceneProperties> {
@@ -41,15 +37,10 @@ export class MapService {
             return;
         }
         // load esri script and dojoConfig;
-        await loadScript(this.options);
-        // add cors enabled hosts
-        const [config] = await loadModules(['esri/config']);
-        for (const server of this.options.trustedServers) {
-            config.request.trustedServers.push(server);
-        }
+        const arcgisJsApi = (window as any)['arcgisJsApi'] as string;
+        await loadScript({
+            url: `${arcgisJsApi}/init.js`,
+            css: `${arcgisJsApi}/esri/css/main.css`,
+        });
     }
-}
-
-export interface ArcGisJsApiOptions extends ILoadScriptOptions {
-    trustedServers: string[];
 }
